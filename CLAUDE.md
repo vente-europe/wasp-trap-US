@@ -22,16 +22,20 @@ All content in this project (visualizations, labels, comments, documentation) mu
 
 ## Tab Structure
 
-*(To be defined once data is loaded and analysed)*
-
 | Tab | Content |
 |-----|---------|
-| 1 — Market Overview | KPIs, top ASINs |
-| 2 — … | … |
+| 1 — Segments Analysis | Total KPIs, segment KPI cards, market share pies, segment summary table, brand % unit share, monthly seasonality index |
+| 2 — Market Structure | Fruit fly template data (placeholder) |
+| 3 — Reviews | Fruit fly template data (placeholder) |
 
 ## Key Data Dimensions
 
-*(To be defined — add product types, segments, or other dimensions once data is reviewed)*
+| Dimension | Values |
+|-----------|--------|
+| Segment | Lure (29 ASINs), Sticky (8 ASINs), Decoy Nest (2 ASINs), Electric (1 ASIN) |
+| Brands | 13 total: RESCUE!, ZEVO, Spectracide, DECYOOL, Landisun, Sancodee, Stingmon, Qualirey, X-octenol, Jiermadun, TriskelBlue, outtkitywi, Hivenlly |
+| Season | Peak: Aug (index 2.40×), Trough: Jan (0.19×), Ratio: 12.6× |
+| Market | 983K units · $21.2M revenue (12M) |
 
 ---
 
@@ -65,9 +69,17 @@ All content in this project (visualizations, labels, comments, documentation) mu
 
 ## Known Bugs & Fixes
 
-*(None yet — update as work progresses)*
+- Electric (ZEVO) has no sales data for Mar–Jun 2025 in its CSV → seasonality index shows 0.0 for those months. This is actual data, not a bug.
+- B0C5F7WFFY (RESCUE! Carpenter Bee TrapStik 4-pack, Sticky) has no 3y sales CSV → negligible impact (~42 units/mo X-Ray).
 
 ---
+
+## Chart Insertion Rule
+
+**When adding a new chart to any existing section:**
+- **NEVER remove or replace existing charts or content**
+- **ALWAYS insert the new chart below existing charts and push everything else down**
+- This applies even if the user says "add here" — preserve all existing elements, only insert
 
 ## Self-Update Rules
 
