@@ -718,6 +718,57 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
   </table>
 </div>
 
+<!-- SECTION 7: Positive Review Analysis -->
+<h3 style="margin:28px 0 12px;font-size:.95rem;font-weight:700;color:#1e293b">Positive Review Analysis (4★+5★ · 434 reviews)</h3>
+<div class="g2" style="align-items:start">
+  <div class="card">
+    <h3>Top Customer-Praised Themes</h3>
+    <div class="cw" style="height:300px"><canvas id="posThemesChart"></canvas></div>
+    <div class="note">Multi-match: one review can mention multiple themes. 434 positive reviews (4★+5★). Effectiveness dominates — 40% of happy customers explicitly praise catch volume.</div>
+  </div>
+  <div class="card">
+    <h3>Theme Mention Rates</h3>
+    <div class="tbl-wrap" style="max-height:340px">
+    <table>
+      <thead><tr><th>Theme</th><th style="text-align:right">Reviews</th><th style="text-align:right">% of 4★+5★</th></tr></thead>
+      <tbody>
+        <tr><td>Effectiveness / catches many</td><td style="text-align:right">175</td><td style="text-align:right">40.3%</td></tr>
+        <tr><td>Reduces outdoor problem</td><td style="text-align:right">103</td><td style="text-align:right">23.7%</td></tr>
+        <tr><td>Attractant quality</td><td style="text-align:right">103</td><td style="text-align:right">23.7%</td></tr>
+        <tr><td>Fast results</td><td style="text-align:right">70</td><td style="text-align:right">16.1%</td></tr>
+        <tr><td>Safe / non-toxic</td><td style="text-align:right">57</td><td style="text-align:right">13.1%</td></tr>
+        <tr><td>Easy setup</td><td style="text-align:right">46</td><td style="text-align:right">10.6%</td></tr>
+        <tr><td>Reusable / refillable</td><td style="text-align:right">31</td><td style="text-align:right">7.1%</td></tr>
+        <tr><td>Better than alternatives</td><td style="text-align:right">21</td><td style="text-align:right">4.8%</td></tr>
+        <tr><td>Good value</td><td style="text-align:right">19</td><td style="text-align:right">4.4%</td></tr>
+        <tr><td>Durable / well-made</td><td style="text-align:right">13</td><td style="text-align:right">3.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note" style="margin-top:8px">Additional signals: <strong>10.1%</strong> actively recommend the product · <strong>3.2%</strong> express repurchase intent.</div>
+  </div>
+</div>
+
+<!-- SECTION 8: Positive Review Insights -->
+<div class="card" style="margin-top:18px">
+  <h3>Positive Review Insights — CPG / Amazon Product Strategy</h3>
+  <table>
+    <thead><tr><th style="width:18%">Analysis Type</th><th style="width:40%">Finding (from 4★+5★ reviews)</th><th>Strategic Implication</th></tr></thead>
+    <tbody>
+      <tr><td>Core Value Driver</td><td>40.3% of positive reviews praise catch effectiveness — "trap full", "hundreds caught", "filled up in days"</td><td>Lead listing with effectiveness proof: hero image of a full trap, catch-count callout in title. This is the #1 reason customers are satisfied</td></tr>
+      <tr><td>Use Case</td><td>23.7% mention solving an outdoor living problem — deck, patio, BBQ, yard enjoyment</td><td>Position product as "outdoor lifestyle enabler" not just "pest control". A+ content showing families on patios connects to the emotional purchase driver</td></tr>
+      <tr><td>Product Attribute</td><td>23.7% praise the attractant/bait quality — customers notice when the formula works for their region</td><td>Attractant is the hero ingredient. Highlight formula specificity (regional targeting) as a premium differentiator vs generic traps</td></tr>
+      <tr><td>Speed Expectation</td><td>16.1% praise fast results — "within hours", "first day", "overnight"</td><td>Set and deliver a "results in 24–48 hours" promise in bullet points. Speed is the 4th most praised attribute — underpromise, overdeliver</td></tr>
+      <tr><td>Safety Signal</td><td>13.1% mention safe/non-toxic as a positive — important for families with pets and children</td><td>"Non-toxic" and "pet-safe" claims resonate. Include in title or first bullet. Addresses both a positive driver (13%) and negative concern (5% of neg reviews)</td></tr>
+      <tr><td>Ease of Use</td><td>10.6% praise easy setup — "just hang it", "no hassle", "simple"</td><td>Simplicity is a purchase enabler. Show 3-step setup in A+ content. Complexity kills conversion in outdoor pest control</td></tr>
+      <tr><td>Sustainability</td><td>7.1% value reusable/refillable design — "season after season", "wash and refill"</td><td>Reusability creates repeat purchase loop via refill cartridges. Highlight "buy once, refill each season" in listing to drive both initial conversion and LTV</td></tr>
+      <tr><td>Competitive Moat</td><td>4.8% say "better than anything else I've tried" — strong switching signal</td><td>Use "switch and stay" messaging. Customers who tried alternatives and landed here are the most loyal — target competitor ASINs with Sponsored Display</td></tr>
+      <tr><td>Advocacy</td><td>10.1% recommend to others, 3.2% express repurchase intent</td><td>1 in 10 happy customers actively advocates. Add a "share with a neighbor" insert or referral prompt to amplify organic word-of-mouth</td></tr>
+      <tr><td>Price Sensitivity</td><td>Only 4.4% mention value/price as a positive — price is not the primary driver</td><td>Customers buy on effectiveness, not price. Premium pricing ($30–40 range) is defensible — don't compete on price, compete on proof of effectiveness</td></tr>
+    </tbody>
+  </table>
+</div>
+
 </div><!-- END TAB L -->
 
 
@@ -1510,6 +1561,28 @@ segInit();
       scales: { y: { ticks: { callback: v => v + '%' }, max: 20 } }
     }
   });
+
+  // S7: Positive Review Themes — horizontal bar chart
+  const posEl = document.getElementById('posThemesChart');
+  if (posEl) {
+    const posLabels = ['Effectiveness','Outdoor problem','Attractant quality','Fast results','Safe / non-toxic','Easy setup','Reusable','Better than alt.','Good value','Durable'];
+    const posData   = [40.3, 23.7, 23.7, 16.1, 13.1, 10.6, 7.1, 4.8, 4.4, 3.0];
+    const posColors = ['#16a34a','#2563eb','#0891b2','#7c3aed','#d97706','#84cc16','#f59e0b','#f97316','#dc2626','#94a3b8'];
+    new Chart(posEl, {
+      type: 'bar',
+      plugins: [ChartDataLabels],
+      data: { labels: posLabels, datasets: [{ data: posData, backgroundColor: posColors, label: '% of 4★+5★' }] },
+      options: {
+        maintainAspectRatio: false, indexAxis: 'y',
+        plugins: {
+          legend: { display: false },
+          datalabels: { formatter: v => v + '%', anchor: 'end', align: 'end', offset: 2, color: '#1e293b', font: { size: 10, weight: 'bold' } },
+          tooltip: { callbacks: { label: ctx => ctx.raw + '% of positive reviews' } }
+        },
+        scales: { x: { max: 50, ticks: { callback: v => v + '%' } } }
+      }
+    });
+  }
 })();
 
 // ── Sortable table ────────────────────────────────────────────────────────────
