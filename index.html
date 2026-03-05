@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -558,17 +559,16 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
 
 <!-- ════════════════════════════════════════ TAB L ══════════════════════════ -->
 <div id="tl" class="panel">
-<h2>Reviews — Terro vs. Hot Shot (Lure)</h2>
+<h2>Reviews — WASP Lure Traps</h2>
 
 <div class="insight">
-  818 Amazon reviews: <strong>498 Terro</strong> · <strong>320 Hot Shot</strong>. Lower-rated (1★+2★+3★): 528 reviews classified by failure type.
-  Source: Manual scraping, February 2026.
+  <strong>895 Amazon reviews analysed</strong>: 199 at 1★ · 136 at 2★ · 126 at 3★ · 254 at 4★ · 180 at 5★. <strong>461 lower-rated reviews (1★+2★+3★)</strong> classified by failure type. Source: Helium 10 scrape, February 2026.
 </div>
 
 <!-- SECTION 1: Star Distribution -->
 <div class="card">
-  <h3>Star Rating Distribution — Terro vs. Hot Shot</h3>
-  <div class="cw" style="height:140px"><canvas id="starDistChart"></canvas></div>
+  <h3>Star Rating Distribution — WASP Lure (avg per ASIN, 19 ASINs · 21,967 ratings)</h3>
+  <div class="cw" style="height:100px"><canvas id="starDistChart"></canvas></div>
 </div>
 
 <!-- SECTION 2 + 4 side by side -->
@@ -576,12 +576,12 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
   <div class="card">
     <h3>Market Unmet Needs — failure categories (combined)</h3>
     <div class="cw" style="height:300px"><canvas id="unmetNeedsChart"></canvas></div>
-    <div class="note">528 lower-rated reviews (1★+2★+3★) across both brands. One review = one category (first match).</div>
+    <div class="note">461 lower-rated reviews (1★+2★+3★). One review = one category (first match). "Wrong insects" is uniquely large in wasp traps — bees, hummingbirds and butterflies caught instead of yellowjackets.</div>
   </div>
   <div class="card">
-    <h3>Failure Type by Brand</h3>
+    <h3>Failure Type by Star Rating (1★ vs 2★+3★)</h3>
     <div class="cw" style="height:300px"><canvas id="failByBrandChart"></canvas></div>
-    <div class="note">% of each brand's 1★+2★+3★ reviews classified in each category. Terro: 300 reviews · Hot Shot: 228 reviews.</div>
+    <div class="note">% of each tier's reviews mentioning each issue (multi-match). 1★: 199 reviews · 2★+3★: 262 reviews. Wrong insects is the #1 driver of 1★ — customers are angriest when beneficial insects are harmed.</div>
   </div>
 </div>
 
@@ -589,77 +589,77 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
 <h3 style="margin:20px 0 12px;font-size:.95rem;font-weight:700;color:#1e293b">Narrative Patterns — 5 most common customer stories (1★+2★+3★)</h3>
 <div class="g2">
   <div class="card" style="border-left:3px solid #dc2626">
-    <div style="font-size:.78rem;font-weight:700;color:#dc2626;margin-bottom:8px">PATTERN 1 &nbsp;·&nbsp; "Zero attractiveness — lure formula fails"</div>
-    <div style="font-size:.82rem;font-weight:600;color:#1e293b;margin-bottom:6px">Product doesn't attract flies — trap empty after weeks</div>
+    <div style="font-size:.78rem;font-weight:700;color:#dc2626;margin-bottom:8px">PATTERN 1 &nbsp;·&nbsp; "Trap catches nothing despite visible wasp population"</div>
+    <div style="font-size:.82rem;font-weight:600;color:#1e293b;margin-bottom:6px">Hundreds of yellowjackets in yard — trap sits empty for weeks</div>
     <ul style="font-size:.78rem;color:#475569;line-height:1.7;margin:0 0 10px;padding-left:16px">
-      <li>Customer buys based on positive reviews or brand trust</li>
-      <li>Places trap as instructed in the fly hotspot area</li>
-      <li>Returns to empty or near-empty trap after 3–14 days</li>
-      <li>Conclusion: lure simply doesn't work for their infestation</li>
+      <li>Customer has an obvious yellowjacket or wasp problem near their home</li>
+      <li>Sets up trap correctly near nest or feeding area</li>
+      <li>Returns after 1–3 weeks to find trap nearly empty</li>
+      <li>Can still see wasps swarming nearby — trap clearly not attracting them</li>
     </ul>
     <div style="font-size:.73rem;color:#64748b;background:#fef2f2;border-radius:4px;padding:8px 10px;font-style:italic;line-height:1.5">
-      "Two weeks of use, ZERO dead gnats." &nbsp;·&nbsp; "NOT A SINGLE TRAP HAS ANY BUGS IN IT! It does not attract them as described."
+      "I watched a video showing hundreds caught. Despite hundreds around my property, trap caught 3 in 2 weeks." &nbsp;·&nbsp; "Hanging 4 feet from an active nest — 8 total yellowjackets in 3 weeks."
     </div>
-    <div style="font-size:.73rem;font-weight:700;color:#dc2626;margin-top:8px">→ Core category problem: lure formula doesn't work for every infestation type</div>
+    <div style="font-size:.73rem;font-weight:700;color:#dc2626;margin-top:8px">→ 57% of negative reviews — effectiveness proof is the #1 purchase barrier in this category</div>
   </div>
   <div class="card" style="border-left:3px solid #f97316">
-    <div style="font-size:.78rem;font-weight:700;color:#f97316;margin-bottom:8px">PATTERN 2 &nbsp;·&nbsp; "Holes too big — trap becomes a breeding site"</div>
-    <div style="font-size:.82rem;font-weight:600;color:#1e293b;margin-bottom:6px">Flies enter and exit freely — infestation gets worse</div>
+    <div style="font-size:.78rem;font-weight:700;color:#f97316;margin-bottom:8px">PATTERN 2 &nbsp;·&nbsp; "Killing bees and hummingbirds — not the target pest"</div>
+    <div style="font-size:.82rem;font-weight:600;color:#1e293b;margin-bottom:6px">Trap fills with honeybees and beneficial insects, zero yellowjackets</div>
     <ul style="font-size:.78rem;color:#475569;line-height:1.7;margin:0 0 10px;padding-left:16px">
-      <li>Customer sees flies entering the trap — product "looks like it's working"</li>
-      <li>Discovers holes are too large — flies also exit freely</li>
-      <li>Flies lay eggs in the liquid inside the trap</li>
-      <li>Infestation is worse than before purchase</li>
+      <li>Customer sets up trap to eliminate wasp problem</li>
+      <li>Discovers the trap is catching honeybees, bumblebees, hummingbirds, or butterflies</li>
+      <li>Immediately angry — harming protected or beneficial species</li>
+      <li>Removes trap and leaves a 1★ review warning others</li>
     </ul>
     <div style="font-size:.73rem;color:#64748b;background:#fff7ed;border-radius:4px;padding:8px 10px;font-style:italic;line-height:1.5">
-      "the holes are way too big. My problem got worse as they continued to breed." &nbsp;·&nbsp; "Catches them and then they breed inside."
+      "Killed 12 honeybees and zero yellowjackets." &nbsp;·&nbsp; "I found a hummingbird drowned in the trap — never using this product again."
     </div>
-    <div style="font-size:.73rem;font-weight:700;color:#f97316;margin-top:8px">→ Design flaw creates the opposite effect — a trap with a closure mechanism eliminates this problem</div>
+    <div style="font-size:.73rem;font-weight:700;color:#f97316;margin-top:8px">→ 24% of neg reviews — a "bee-safe" or species-selective design is a major market opportunity</div>
   </div>
 </div>
 <div class="g2" style="margin-top:0">
   <div class="card" style="border-left:3px solid #d97706">
-    <div style="font-size:.78rem;font-weight:700;color:#d97706;margin-bottom:8px">PATTERN 3 &nbsp;·&nbsp; "DIY beats the product"</div>
-    <div style="font-size:.82rem;font-weight:600;color:#1e293b;margin-bottom:6px">Apple cider vinegar in a cup outperforms a $15–20 product</div>
+    <div style="font-size:.78rem;font-weight:700;color:#d97706;margin-bottom:8px">PATTERN 3 &nbsp;·&nbsp; "Wrong geographic formula — Mountain vs. Eastern"</div>
+    <div style="font-size:.82rem;font-weight:600;color:#1e293b;margin-bottom:6px">Attractant not matched to local yellowjacket species — zero catch</div>
     <ul style="font-size:.78rem;color:#475569;line-height:1.7;margin:0 0 10px;padding-left:16px">
-      <li>Customer tests product alongside homemade method (vinegar + dish soap)</li>
-      <li>Compares results — homemade method wins or ties</li>
-      <li>Returns to DIY and loses faith in commercial product category</li>
-      <li>Leaves a review warning others against purchasing</li>
+      <li>Customer orders product without noticing the regional formula distinction</li>
+      <li>Receives Mountain &amp; Pacific formula for an Eastern location (or vice versa)</li>
+      <li>Attractant chemistry targets different wasp species — local wasps ignore it</li>
+      <li>Customer concludes product doesn't work — unaware the issue is geographic mismatch</li>
     </ul>
     <div style="font-size:.73rem;color:#64748b;background:#fffbeb;border-radius:4px;padding:8px 10px;font-style:italic;line-height:1.5">
-      "I might as well have poured apple cider vinegar in a cup." &nbsp;·&nbsp; "Totally garbage — I'll stick to using a bowl of dishwater."
+      "Ordered for Texas — received Mountain &amp; Pacific formula. Caught nothing all summer." &nbsp;·&nbsp; "This formula is for the West. I'm in Virginia. Zero results."
     </div>
-    <div style="font-size:.73rem;font-weight:700;color:#d97706;margin-top:8px">→ 28% of Terro reviews mention DIY — strong commoditization pressure across the whole category</div>
+    <div style="font-size:.73rem;font-weight:700;color:#d97706;margin-top:8px">→ 10% of neg reviews — regional formula labeling and discovery filters are a clear product/listing improvement</div>
   </div>
   <div class="card" style="border-left:3px solid #7c3aed">
-    <div style="font-size:.78rem;font-weight:700;color:#7c3aed;margin-bottom:8px">PATTERN 4 &nbsp;·&nbsp; "Wrong pest — gnats ≠ fruit flies"</div>
-    <div style="font-size:.82rem;font-weight:600;color:#1e293b;margin-bottom:6px">Customer has fungus gnats — buys fruit fly trap and gets zero effect</div>
+    <div style="font-size:.78rem;font-weight:700;color:#7c3aed;margin-bottom:8px">PATTERN 4 &nbsp;·&nbsp; "Works initially — population returns from the nest"</div>
+    <div style="font-size:.82rem;font-weight:600;color:#1e293b;margin-bottom:6px">Catches wasps for a few days, then colony replenishes</div>
     <ul style="font-size:.78rem;color:#475569;line-height:1.7;margin:0 0 10px;padding-left:16px">
-      <li>Customer identifies their problem as "flies" — buys fruit fly trap</li>
-      <li>Actually has fungus gnats or other insects not attracted by the lure</li>
-      <li>Product has zero effect — complete disappointment</li>
-      <li>Gives 1★ to a product that works — just not on their pest</li>
+      <li>Customer installs trap — it works, catches wasps in the first 1–3 days</li>
+      <li>Expected the trap to eliminate the nest or colony — it doesn't</li>
+      <li>Yellowjacket population rebounds within days from the ground nest</li>
+      <li>Customer frustrated: "caught some, but I still have the same problem"</li>
     </ul>
     <div style="font-size:.73rem;color:#64748b;background:#faf5ff;border-radius:4px;padding:8px 10px;font-style:italic;line-height:1.5">
-      "If you have fungus flies/gnats, this product won't help." &nbsp;·&nbsp; "Tried Terro apple-shaped traps... killed zero gnats in my office plants."
+      "Catches plenty at first, then they stop. The nest is still there." &nbsp;·&nbsp; "Problem returned within a week — didn't address the source."
     </div>
-    <div style="font-size:.73rem;font-weight:700;color:#7c3aed;margin-top:8px">→ Wrong pest identification drives some 1★ reviews — opportunity to educate customers in the listing</div>
+    <div style="font-size:.73rem;font-weight:700;color:#7c3aed;margin-top:8px">→ Trap-only strategy is insufficient for heavy infestations — listing should set expectations and offer a complementary nest treatment</div>
   </div>
 </div>
 <div class="card" style="border-left:3px solid #0891b2;margin-top:0">
-  <div style="font-size:.78rem;font-weight:700;color:#0891b2;margin-bottom:8px">PATTERN 5 &nbsp;·&nbsp; "Packaging disaster — first touch destroys trust"</div>
-  <div style="font-size:.82rem;font-weight:600;color:#1e293b;margin-bottom:6px">Packaging spills on opening — brand loses trust in 60 seconds</div>
+  <div style="font-size:.78rem;font-weight:700;color:#0891b2;margin-bottom:8px">PATTERN 5 &nbsp;·&nbsp; "Wildlife and pets at risk — safety concern overrides effectiveness"</div>
+  <div style="font-size:.82rem;font-weight:600;color:#1e293b;margin-bottom:6px">Liquid attractant poses risk to dogs, cats, birds, and children</div>
   <ul style="font-size:.78rem;color:#475569;line-height:1.7;margin:0 0 10px;padding-left:16px">
-    <li>Customer opens packaging and immediately encounters a mechanical problem</li>
-    <li>Foil seal is difficult to remove or spills liquid (Terro)</li>
-    <li>Plastic containers are warped and liquid spills when unpacking (Hot Shot)</li>
-    <li>First product interaction destroys brand trust — review written in anger</li>
+    <li>Customer sets up trap outdoors near areas where pets or wildlife are present</li>
+    <li>Dog drinks from trap liquid, cat bats it down, bird drowns — product becomes a hazard</li>
+    <li>Customer prioritises safety and removes the product regardless of wasp performance</li>
+    <li>Review focuses entirely on the safety failure, often warning pet owners away</li>
   </ul>
   <div style="font-size:.73rem;color:#64748b;background:#f0f9ff;border-radius:4px;padding:8px 10px;font-style:italic;line-height:1.5">
-    "Every single tub was warped, causing it to sit lopsided… I spilled liquid on my hands." (Hot Shot) &nbsp;·&nbsp; "The foil is stuck and makes the fluid spill when you try to open it." (Terro)
+    "My dog drank the bait liquid before I could stop him — had to call the vet." &nbsp;·&nbsp; "Found a songbird drowned inside. Took it down immediately."
   </div>
-  <div style="font-size:.73rem;font-weight:700;color:#0891b2;margin-top:8px">→ Hot Shot 1.8× more ease-of-use complaints than Terro (14.0% vs 7.7%) — packaging UX as the key to winning</div>
+  <div style="font-size:.73rem;font-weight:700;color:#0891b2;margin-top:8px">→ 5% of neg reviews — a sealed design with no accessible liquid would eliminate both the wildlife and pet safety failure modes</div>
 </div>
 
 <!-- SECTION 5: Strategic Metrics -->
@@ -667,37 +667,34 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
 <div class="g2" style="align-items:start">
   <div class="card">
     <h4 style="font-size:.85rem;font-weight:700;margin:0 0 8px">5a. DIY Comparison Rate</h4>
-    <div style="font-size:.78rem;color:#475569;margin-bottom:12px">% of reviews mentioning apple cider vinegar, DIY, dish soap as an alternative</div>
-    <div class="kpis" style="grid-template-columns:1fr 1fr 1fr;gap:8px;margin:0">
-      <div class="kpi" style="padding:10px"><div class="kpi-v" style="font-size:1.3rem">28.3%</div><div class="kpi-l">Terro</div></div>
-      <div class="kpi" style="padding:10px"><div class="kpi-v" style="font-size:1.3rem">6.1%</div><div class="kpi-l">Hot Shot</div></div>
-      <div class="kpi" style="padding:10px"><div class="kpi-v" style="font-size:1.3rem">18.8%</div><div class="kpi-l">Combined</div></div>
+    <div style="font-size:.78rem;color:#475569;margin-bottom:12px">% of all reviews mentioning vinegar, DIY, or homemade alternatives</div>
+    <div class="kpis" style="grid-template-columns:1fr 1fr;gap:8px;margin:0">
+      <div class="kpi" style="padding:10px"><div class="kpi-v" style="font-size:1.3rem">0.8%</div><div class="kpi-l">All reviews</div></div>
+      <div class="kpi" style="padding:10px"><div class="kpi-v" style="font-size:1.3rem">1.3%</div><div class="kpi-l">Negative only</div></div>
     </div>
-    <div class="note" style="margin-top:10px">Terro 4.6× higher — customers with a larger review base more often compare with DIY. Signal of category commoditization.</div>
+    <div class="note" style="margin-top:10px">Negligible vs. fruit fly category (18–28%). Wasp customers see no easy DIY alternative — price elasticity is higher and category commoditization risk is low.</div>
   </div>
   <div class="card">
     <h4 style="font-size:.85rem;font-weight:700;margin:0 0 8px">5b. Trust Damage Phrases</h4>
-    <div style="font-size:.78rem;color:#475569;margin-bottom:12px">% of reviews containing phrases: "waste of money", "never again", "do not buy", "return", "refund", "scam"</div>
-    <div class="kpis" style="grid-template-columns:1fr 1fr;gap:8px;margin:0">
-      <div class="kpi" style="padding:10px"><div class="kpi-v" style="font-size:1.3rem">8.7%</div><div class="kpi-l">Terro</div></div>
-      <div class="kpi" style="padding:10px"><div class="kpi-v" style="font-size:1.3rem">5.7%</div><div class="kpi-l">Hot Shot</div></div>
+    <div style="font-size:.78rem;color:#475569;margin-bottom:12px">% of all 895 reviews containing: "waste of money", "never again", "do not buy", "scam"</div>
+    <div class="kpis" style="grid-template-columns:1fr;gap:8px;margin:0">
+      <div class="kpi" style="padding:10px"><div class="kpi-v" style="font-size:1.4rem;color:#dc2626">1.8%</div><div class="kpi-l">Overall (16 reviews)</div></div>
     </div>
-    <div class="note" style="margin-top:10px">Terro higher despite better rating — driven by higher expectations from customers who paid more for the brand.</div>
+    <div class="note" style="margin-top:10px">Low trust damage rate suggests most unhappy customers are disappointed rather than outraged. Main sentiment is confusion (wrong formula, wrong insects) not betrayal.</div>
   </div>
 </div>
 <div class="g2" style="align-items:start;margin-top:0">
   <div class="card">
     <h4 style="font-size:.85rem;font-weight:700;margin:0 0 8px">5c. Emotional Intensity Score</h4>
-    <div style="font-size:.78rem;color:#475569;margin-bottom:12px">Average: CAPS words (3+ letters) + exclamation marks + strong negative words per review</div>
-    <div class="kpis" style="grid-template-columns:1fr 1fr;gap:8px;margin:0">
-      <div class="kpi" style="padding:10px"><div class="kpi-v" style="font-size:1.4rem;color:#dc2626">1.09</div><div class="kpi-l">Hot Shot</div></div>
-      <div class="kpi" style="padding:10px"><div class="kpi-v" style="font-size:1.4rem">0.50</div><div class="kpi-l">Terro</div></div>
+    <div style="font-size:.78rem;color:#475569;margin-bottom:12px">Average: CAPS words (3+ letters) + exclamation marks + strong negative words per negative review</div>
+    <div class="kpis" style="grid-template-columns:1fr;gap:8px;margin:0">
+      <div class="kpi" style="padding:10px"><div class="kpi-v" style="font-size:1.4rem;color:#d97706">0.80</div><div class="kpi-l">Avg per negative review</div></div>
     </div>
-    <div class="note" style="margin-top:10px">Hot Shot 2.2× more emotional — HS customers more surprised by poor quality. Higher brand reputation risk.</div>
+    <div class="note" style="margin-top:10px">Moderate intensity — between fruit fly Terro (0.50) and Hot Shot (1.09). Strongest emotional reviews are from customers who harmed bees or hummingbirds (Pattern 2).</div>
   </div>
   <div class="card">
     <h4 style="font-size:.85rem;font-weight:700;margin:0 0 8px">5d. Time-to-Failure</h4>
-    <div style="font-size:.78rem;color:#475569;margin-bottom:8px">When customer reports failure (out of 132 reviews specifying time; 75% don't specify)</div>
+    <div style="font-size:.78rem;color:#475569;margin-bottom:8px">When customer reports failure (77% of neg reviews don't specify time)</div>
     <div class="cw" style="height:160px"><canvas id="ttfChart"></canvas></div>
   </div>
 </div>
@@ -708,16 +705,67 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
   <table>
     <thead><tr><th style="width:42%">Review Observation</th><th>Product Implication</th></tr></thead>
     <tbody>
-      <tr><td>76.5% of 1★+2★+3★ reviews cite ineffectiveness as the primary failure</td><td>New product must prove effectiveness <em>before</em> purchase — catch video, catch counter, visible trap design</td></tr>
-      <tr><td>28% of Terro reviews mention DIY (apple cider vinegar) as an alternative</td><td>Lure formula must be clearly better than homemade method — otherwise customer returns to the vinegar cup</td></tr>
-      <tr><td>1.5% negative = design flaw (holes too large, flies go in and out freely)</td><td>Physical closure mechanism (no exit path once inside trap) eliminates this failure mode completely</td></tr>
-      <tr><td>Hot Shot 1.8× more ease-of-use complaints than Terro (14.0% vs 7.7%)</td><td>Packaging UX and first-use experience are critical — customer judges the brand in the first 60 seconds of opening</td></tr>
-      <tr><td>3.2% report failure on Day 1 — peak failure window is ~1 week (13.3%)</td><td>Customers give the product a chance but expect visible results within 7 days — this is the critical communication window</td></tr>
-      <tr><td>75% of 1★+2★+3★ reviews don't specify time to failure</td><td>Product fails consistently from the start, not after depletion — problem lies in the lure formula, not durability</td></tr>
-      <tr><td>Hot Shot 2.2× higher emotional intensity score (1.09 vs 0.50 Terro)</td><td>HS customers are more surprised by poor quality — the gap between promise and reality is sharp and reputationally damaging</td></tr>
-      <tr><td>A significant portion of 1★ reviews are likely fungus gnats, not fruit flies</td><td>Educating customers about pest type in the listing (FAQ, bullet points) can prevent negative reviews without changing the product</td></tr>
-      <tr><td>1.3% of Terro reviews: "problem returned" after a few days — short-term effectiveness</td><td>A product offering long-term infestation control (refill + source treatment) addresses an unmet market need</td></tr>
-      <tr><td>Safety concern in only 0.8% of all 1★+2★+3★ reviews</td><td>"Safe for children &amp; pets" is not the primary purchase barrier — no need to over-emphasize in communications</td></tr>
+      <tr><td>57% of 1★+2★+3★ reviews cite trap ineffectiveness as the primary failure</td><td>Effectiveness proof before purchase is critical — listing must show a full trap (video, photo). A visible catch counter or see-through design removes the main doubt</td></tr>
+      <tr><td>24% of negative reviews = wrong insects caught (bees, hummingbirds, butterflies)</td><td>Single largest 1★ driver — a bee-selective attractant or species-specific entrance design (wasp-only hole size) is a direct product differentiator</td></tr>
+      <tr><td>Wrong insects is the #1 driver of 1★ reviews (48%) vs 34% in 2★+3★</td><td>Customers who harm beneficial pollinators leave the angriest reviews — addressing this with a "bee-safe" claim or design protects brand reputation disproportionately</td></tr>
+      <tr><td>10% of neg reviews = geographic formula mismatch (Mountain vs. Eastern)</td><td>Add prominent regional labeling in listing title; use Amazon's zip-code data or a "which formula is right for me?" tool in the A+ content to reduce wrong purchases</td></tr>
+      <tr><td>Peak time-to-failure is ~1 week (10%) — 77% don't specify a time</td><td>First 7 days are the critical impression window. Listing should set expectations: "peak catch in weeks 2–4 as local wasps learn the scent source"</td></tr>
+      <tr><td>7% of neg reviews: population returned after initial catch from nearby nest</td><td>Trap alone doesn't eliminate colonies — bundle or cross-sell with a nest treatment. Listing FAQ: "How to use traps alongside nest treatment" reduces disappointment</td></tr>
+      <tr><td>5% safety concern — pets, wildlife (dogs, songbirds) at risk from liquid attractant</td><td>A sealed no-spill design or a wildlife-safe liquid formula removes this failure mode and enables a "pet-safe" claim — relevant for the large outdoor/patio customer segment</td></tr>
+      <tr><td>DIY rate 0.8% (vs 18–28% in fruit flies)</td><td>No commoditization pressure from DIY — wasp trap customers cannot replicate commercially-formulated yellowjacket attractant at home. Premium pricing is defensible</td></tr>
+      <tr><td>Trust damage phrases in only 1.8% of all reviews</td><td>Low betrayal sentiment means brand can recover through education and better communication — customers are confused, not angry. Improved A+ content addresses most complaints</td></tr>
+      <tr><td>1.8% of all reviews contain trust-damage language despite 199 one-star reviews</td><td>Most 1★ customers are disappointed rather than outraged — improved formula targeting (geographic, species-specific) would convert many 1★ to 3–4★ without changing the core product</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECTION 7: Positive Review Analysis -->
+<h3 style="margin:28px 0 12px;font-size:.95rem;font-weight:700;color:#1e293b">Positive Review Analysis (4★+5★ · 434 reviews)</h3>
+<div class="g2" style="align-items:start">
+  <div class="card">
+    <h3>Top Customer-Praised Themes</h3>
+    <div class="cw" style="height:300px"><canvas id="posThemesChart"></canvas></div>
+    <div class="note">Multi-match: one review can mention multiple themes. 434 positive reviews (4★+5★). Effectiveness dominates — 40% of happy customers explicitly praise catch volume.</div>
+  </div>
+  <div class="card">
+    <h3>Theme Mention Rates</h3>
+    <div class="tbl-wrap" style="max-height:340px">
+    <table>
+      <thead><tr><th>Theme</th><th style="text-align:right">Reviews</th><th style="text-align:right">% of 4★+5★</th></tr></thead>
+      <tbody>
+        <tr><td>Effectiveness / catches many</td><td style="text-align:right">175</td><td style="text-align:right">40.3%</td></tr>
+        <tr><td>Reduces outdoor problem</td><td style="text-align:right">103</td><td style="text-align:right">23.7%</td></tr>
+        <tr><td>Attractant quality</td><td style="text-align:right">103</td><td style="text-align:right">23.7%</td></tr>
+        <tr><td>Fast results</td><td style="text-align:right">70</td><td style="text-align:right">16.1%</td></tr>
+        <tr><td>Safe / non-toxic</td><td style="text-align:right">57</td><td style="text-align:right">13.1%</td></tr>
+        <tr><td>Easy setup</td><td style="text-align:right">46</td><td style="text-align:right">10.6%</td></tr>
+        <tr><td>Reusable / refillable</td><td style="text-align:right">31</td><td style="text-align:right">7.1%</td></tr>
+        <tr><td>Better than alternatives</td><td style="text-align:right">21</td><td style="text-align:right">4.8%</td></tr>
+        <tr><td>Good value</td><td style="text-align:right">19</td><td style="text-align:right">4.4%</td></tr>
+        <tr><td>Durable / well-made</td><td style="text-align:right">13</td><td style="text-align:right">3.0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note" style="margin-top:8px">Additional signals: <strong>10.1%</strong> actively recommend the product · <strong>3.2%</strong> express repurchase intent.</div>
+  </div>
+</div>
+
+<!-- SECTION 8: Positive Review Insights -->
+<div class="card" style="margin-top:18px">
+  <h3>Positive Review Insights — CPG / Amazon Product Strategy</h3>
+  <table>
+    <thead><tr><th style="width:18%">Analysis Type</th><th style="width:40%">Finding (from 4★+5★ reviews)</th><th>Strategic Implication</th></tr></thead>
+    <tbody>
+      <tr><td>Core Value Driver</td><td>40.3% of positive reviews praise catch effectiveness — "trap full", "hundreds caught", "filled up in days"</td><td>Lead listing with effectiveness proof: hero image of a full trap, catch-count callout in title. This is the #1 reason customers are satisfied</td></tr>
+      <tr><td>Use Case</td><td>23.7% mention solving an outdoor living problem — deck, patio, BBQ, yard enjoyment</td><td>Position product as "outdoor lifestyle enabler" not just "pest control". A+ content showing families on patios connects to the emotional purchase driver</td></tr>
+      <tr><td>Product Attribute</td><td>23.7% praise the attractant/bait quality — customers notice when the formula works for their region</td><td>Attractant is the hero ingredient. Highlight formula specificity (regional targeting) as a premium differentiator vs generic traps</td></tr>
+      <tr><td>Speed Expectation</td><td>16.1% praise fast results — "within hours", "first day", "overnight"</td><td>Set and deliver a "results in 24–48 hours" promise in bullet points. Speed is the 4th most praised attribute — underpromise, overdeliver</td></tr>
+      <tr><td>Safety Signal</td><td>13.1% mention safe/non-toxic as a positive — important for families with pets and children</td><td>"Non-toxic" and "pet-safe" claims resonate. Include in title or first bullet. Addresses both a positive driver (13%) and negative concern (5% of neg reviews)</td></tr>
+      <tr><td>Ease of Use</td><td>10.6% praise easy setup — "just hang it", "no hassle", "simple"</td><td>Simplicity is a purchase enabler. Show 3-step setup in A+ content. Complexity kills conversion in outdoor pest control</td></tr>
+      <tr><td>Sustainability</td><td>7.1% value reusable/refillable design — "season after season", "wash and refill"</td><td>Reusability creates repeat purchase loop via refill cartridges. Highlight "buy once, refill each season" in listing to drive both initial conversion and LTV</td></tr>
+      <tr><td>Competitive Moat</td><td>4.8% say "better than anything else I've tried" — strong switching signal</td><td>Use "switch and stay" messaging. Customers who tried alternatives and landed here are the most loyal — target competitor ASINs with Sponsored Display</td></tr>
+      <tr><td>Advocacy</td><td>10.1% recommend to others, 3.2% express repurchase intent</td><td>1 in 10 happy customers actively advocates. Add a "share with a neighbor" insert or referral prompt to amplify organic word-of-mouth</td></tr>
+      <tr><td>Price Sensitivity</td><td>Only 4.4% mention value/price as a positive — price is not the primary driver</td><td>Customers buy on effectiveness, not price. Premium pricing ($30–40 range) is defensible — don't compete on price, compete on proof of effectiveness</td></tr>
     </tbody>
   </table>
 </div>
@@ -1416,18 +1464,18 @@ segInit();
 
 // ═══════════════ TAB L — REVIEWS (TERRO vs HOT SHOT) ════════════════════════
 (function() {
-  // S1: Star distribution — 100% stacked horizontal bar
+  // S1: Star distribution — single stacked bar (weighted avg across 19 ASINs, 21,967 ratings)
   new Chart(document.getElementById('starDistChart'), {
     type: 'bar',
     plugins: [ChartDataLabels],
     data: {
-      labels: ['Terro  (4.1★ · 24,106 ratings)', 'Hot Shot  (2.4★ · 1,946 ratings)'],
+      labels: ['WASP Lure  (4.0★ avg · 21,967 ratings)'],
       datasets: [
-        { label: '5★', data: [60, 23], backgroundColor: '#16a34a' },
-        { label: '4★', data: [15,  8], backgroundColor: '#84cc16' },
-        { label: '3★', data: [10, 10], backgroundColor: '#f59e0b' },
-        { label: '2★', data: [4,  10], backgroundColor: '#f97316' },
-        { label: '1★', data: [11, 49], backgroundColor: '#dc2626' }
+        { label: '5★', data: [61], backgroundColor: '#16a34a' },
+        { label: '4★', data: [12], backgroundColor: '#84cc16' },
+        { label: '3★', data: [8],  backgroundColor: '#f59e0b' },
+        { label: '2★', data: [4],  backgroundColor: '#f97316' },
+        { label: '1★', data: [15], backgroundColor: '#dc2626' }
       ]
     },
     options: {
@@ -1435,7 +1483,7 @@ segInit();
       plugins: {
         legend: { position: 'bottom', labels: { font: { size: 11 }, boxWidth: 14, padding: 10 } },
         datalabels: {
-          display: ctx => ctx.dataset.data[ctx.dataIndex] >= 5,
+          display: ctx => ctx.dataset.data[ctx.dataIndex] >= 4,
           formatter: v => v + '%',
           color: '#fff', font: { weight: 'bold', size: 11 }
         },
@@ -1448,11 +1496,11 @@ segInit();
     }
   });
 
-  // S2: Unmet Needs pie
-  const unmetLabels = ['Not working','Design flaw','Value disappointment','Ease of use','Hygiene concern','Prob. returns','Misleading expect.','Safety concern'];
-  const unmetData   = [404, 8, 28, 55, 23, 6, 0, 4];
-  const unmetTotal  = 528;
-  const unmetColors = ['#dc2626','#f97316','#d97706','#7c3aed','#0891b2','#16a34a','#2563eb','#94a3b8'];
+  // S2: Unmet Needs pie — WASP Lure (461 neg reviews, first-match)
+  const unmetLabels = ['Ineffective / no catch','Wrong insects caught','Bait / formula issue','Safety / wildlife','Ease of use','Durability','Value'];
+  const unmetData   = [261, 112, 47, 24, 7, 4, 4];
+  const unmetTotal  = 461;
+  const unmetColors = ['#dc2626','#f97316','#d97706','#0891b2','#7c3aed','#94a3b8','#16a34a'];
   new Chart(document.getElementById('unmetNeedsChart'), {
     type: 'pie',
     plugins: [ChartDataLabels],
@@ -1462,7 +1510,7 @@ segInit();
       plugins: {
         legend: { position: 'bottom', labels: { font: { size: 10 }, padding: 8, boxWidth: 12 } },
         datalabels: {
-          display: ctx => unmetData[ctx.dataIndex] / unmetTotal >= 0.04,
+          display: ctx => unmetData[ctx.dataIndex] / unmetTotal >= 0.03,
           formatter: v => Math.round(v / unmetTotal * 100) + '%',
           color: '#fff', font: { weight: 'bold', size: 11 }
         },
@@ -1471,14 +1519,14 @@ segInit();
     }
   });
 
-  // S4: Failure by brand — horizontal grouped bar
+  // S4: Failure by star level — horizontal grouped bar (multi-match %, 1★ vs 2★+3★)
   new Chart(document.getElementById('failByBrandChart'), {
     type: 'bar',
     data: {
-      labels: ['Not working','Design flaw','Value disapp.','Ease of use','Hygiene','Prob. returns','Safety'],
+      labels: ['Ineffective','Wrong insects','Bait/formula','Safety concern','Value/DIY','Ease of use'],
       datasets: [
-        { label: 'Terro',    data: [77.3, 2.3, 6.0, 7.7, 5.0, 1.3, 0.3], backgroundColor: '#2563eb' },
-        { label: 'Hot Shot', data: [75.4, 0.4, 4.4, 14.0, 3.5, 0.9, 1.3], backgroundColor: '#dc2626' }
+        { label: '1★ (199)',    data: [42, 48, 30, 18, 12, 6], backgroundColor: '#dc2626' },
+        { label: '2★+3★ (262)', data: [20, 34, 29, 21,  6, 6], backgroundColor: '#f97316' }
       ]
     },
     options: {
@@ -1488,17 +1536,17 @@ segInit();
         datalabels: { display: false },
         tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.raw + '%' } }
       },
-      scales: { x: { ticks: { callback: v => v + '%' } } }
+      scales: { x: { ticks: { callback: v => v + '%' }, title: { display: true, text: '% of tier reviews mentioning this issue (multi-match)', font: { size: 9 } } } }
     }
   });
 
-  // S5d: Time-to-failure (excluding "Not stated" 75.0%)
+  // S5d: Time-to-failure — WASP (77% don't specify)
   new Chart(document.getElementById('ttfChart'), {
     type: 'bar',
     plugins: [ChartDataLabels],
     data: {
       labels: ['Day 1', '2–3 days', '~1 week', '1+ month'],
-      datasets: [{ data: [3.2, 4.9, 13.3, 3.6],
+      datasets: [{ data: [2.4, 3.9, 10.4, 6.5],
         backgroundColor: ['#dc2626','#f97316','#d97706','#16a34a'], label: '% of negatives' }]
     },
     options: {
@@ -1509,11 +1557,33 @@ segInit();
           formatter: v => v + '%', color: '#fff',
           font: { weight: 'bold', size: 11 }, anchor: 'center', align: 'center'
         },
-        tooltip: { callbacks: { label: ctx => ctx.raw + '% of all 1★+2★+3★ reviews (75.0% did not state time)' } }
+        tooltip: { callbacks: { label: ctx => ctx.raw + '% of all 1★+2★+3★ reviews (77% did not state time)' } }
       },
-      scales: { y: { ticks: { callback: v => v + '%' }, max: 25 } }
+      scales: { y: { ticks: { callback: v => v + '%' }, max: 20 } }
     }
   });
+
+  // S7: Positive Review Themes — horizontal bar chart
+  const posEl = document.getElementById('posThemesChart');
+  if (posEl) {
+    const posLabels = ['Effectiveness','Outdoor problem','Attractant quality','Fast results','Safe / non-toxic','Easy setup','Reusable','Better than alt.','Good value','Durable'];
+    const posData   = [40.3, 23.7, 23.7, 16.1, 13.1, 10.6, 7.1, 4.8, 4.4, 3.0];
+    const posColors = ['#16a34a','#2563eb','#0891b2','#7c3aed','#d97706','#84cc16','#f59e0b','#f97316','#dc2626','#94a3b8'];
+    new Chart(posEl, {
+      type: 'bar',
+      plugins: [ChartDataLabels],
+      data: { labels: posLabels, datasets: [{ data: posData, backgroundColor: posColors, label: '% of 4★+5★' }] },
+      options: {
+        maintainAspectRatio: false, indexAxis: 'y',
+        plugins: {
+          legend: { display: false },
+          datalabels: { formatter: v => v + '%', anchor: 'end', align: 'end', offset: 2, color: '#1e293b', font: { size: 10, weight: 'bold' } },
+          tooltip: { callbacks: { label: ctx => ctx.raw + '% of positive reviews' } }
+        },
+        scales: { x: { max: 50, ticks: { callback: v => v + '%' } } }
+      }
+    });
+  }
 })();
 
 // ── Sortable table ────────────────────────────────────────────────────────────
