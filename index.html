@@ -123,7 +123,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
   <div class="card">
     <h3>Pack Size — Revenue Share (Lure Trap, 12M)</h3>
     <div class="cw" style="height:300px"><canvas id="packRevPieChart"></canvas></div>
-    <div class="note">Revenue by pack size. 6-pack leads at 31.9% ($2.0M) despite being only #3 by units — higher avg price ($34.60). 1-pack and 2-pack roughly tied at ~19% each.</div>
+    <div class="note">Revenue by pack size. 6-pack leads at 31.9% ($2.0M) despite being only #3 by units. 1-pack and 2-pack roughly tied at ~19% each.</div>
   </div>
 </div>
 
@@ -208,28 +208,6 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
 <div id="psc_insights" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px"></div>
 
 
-<div class="g2" style="align-items:start">
-  <div class="card">
-    <h3>Price Positioning — TOP 3 Brands per Pack Size</h3>
-    <div class="cw" style="height:320px"><canvas id="pscPriceChart"></canvas></div>
-    <div class="note">Weighted avg price = SUM(revenue) / SUM(units). TOP 3 brands by unit share per pack size only.</div>
-  </div>
-  <div class="card">
-    <h3>Price vs Unit Share</h3>
-    <div style="margin-bottom:10px">
-      <label style="font-size:.73rem;font-weight:600;color:#475569;margin-right:8px">Filter pack size:</label>
-      <select id="pscFilter" onchange="pscFilterScatter()" style="font-size:.73rem;border:1.5px solid #cbd5e1;border-radius:5px;padding:3px 8px;background:#fff">
-        <option value="all">All</option>
-        <option value="1-pack">1-pack</option>
-        <option value="2-pack">2-pack</option>
-        <option value="3-pack">3-pack</option>
-        <option value="6-pack">6-pack</option>
-      </select>
-    </div>
-    <div class="cw" style="height:280px"><canvas id="pscScatterChart"></canvas></div>
-    <div class="note">Bubble size proportional to 12M revenue. Each point = one brand in one pack size. Hover for details.</div>
-  </div>
-</div>
 
 <div class="card">
   <h3>Full Competitive Breakdown — Pack Size
@@ -242,9 +220,8 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
         <th>Brand</th>
         <th class="th-sort" onclick="sortTbl('pscTable',2,this)" style="cursor:pointer;user-select:none" data-asc="">Unit Share ▽</th>
         <th class="th-sort" onclick="sortTbl('pscTable',3,this)" style="cursor:pointer;user-select:none" data-asc="">Value Share ▽</th>
-        <th class="th-sort" onclick="sortTbl('pscTable',4,this)" style="cursor:pointer;user-select:none" data-asc="">Avg Price ▽</th>
-        <th class="th-sort" onclick="sortTbl('pscTable',5,this)" style="cursor:pointer;user-select:none" data-asc="">Units 12M ▽</th>
-        <th class="th-sort" onclick="sortTbl('pscTable',6,this)" style="cursor:pointer;user-select:none" data-asc="">Revenue 12M ▽</th>
+        <th class="th-sort" onclick="sortTbl('pscTable',4,this)" style="cursor:pointer;user-select:none" data-asc="">Units 12M ▽</th>
+        <th class="th-sort" onclick="sortTbl('pscTable',5,this)" style="cursor:pointer;user-select:none" data-asc="">Revenue 12M ▽</th>
       </tr></thead>
       <tbody id="pscTableBody"></tbody>
     </table>
@@ -254,12 +231,12 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
 <div class="card">
   <h3>Brand Summary — Lure (12M)</h3>
   <div class="tbl-wrap"><table class="num-right">
-    <thead><tr><th>Brand</th><th>Rev (12M)</th><th>Share</th><th>ASINs</th><th>Avg Price</th><th>Avg Rating</th><th>Total Reviews</th></tr></thead>
+    <thead><tr><th>Brand</th><th>Rev (12M)</th><th>Share</th><th>ASINs</th><th>Avg Rating</th><th>Total Reviews</th></tr></thead>
     <tbody>
-    <tr><td>RESCUE!</td><td>$5,208,000</td><td>82.5%</td><td>18</td><td>$32.27</td><td>4.1</td><td>33,042</td></tr>
-    <tr><td>Spectracide</td><td>$1,016,276</td><td>16.1%</td><td>2</td><td>$11.48</td><td>3.3</td><td>990</td></tr>
-    <tr><td>Landisun</td><td>$68,152</td><td>1.1%</td><td>1</td><td>$9.99</td><td>3.8</td><td>361</td></tr>
-    <tr><td>Others</td><td>$19,772</td><td>0.3%</td><td>8</td><td>—</td><td>—</td><td>178</td></tr>
+    <tr><td>RESCUE!</td><td>$5,208,000</td><td>82.5%</td><td>18</td><td>4.1</td><td>33,042</td></tr>
+    <tr><td>Spectracide</td><td>$1,016,276</td><td>16.1%</td><td>2</td><td>3.3</td><td>990</td></tr>
+    <tr><td>Landisun</td><td>$68,152</td><td>1.1%</td><td>1</td><td>3.8</td><td>361</td></tr>
+    <tr><td>Others</td><td>$19,772</td><td>0.3%</td><td>8</td><td>—</td><td>178</td></tr>
     </tbody>
   </table></div>
 </div>
@@ -528,7 +505,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
     <h3>Market Share — Revenue (12M)</h3>
     <div id="seg_pie_rev_total" style="font-size:.82rem;color:#64748b;margin:-6px 0 10px"></div>
     <div class="cw" style="height:320px"><canvas id="segRevPieChart"></canvas></div>
-    <div class="note">Lure revenue share (30%) exceeds its unit share (26%) — higher avg price ($24.93) vs Electric ($19.97). Decoy Nest has only 2.4% revenue share despite 6% unit share due to low avg price ($8.99). Electric and Lure together account for ~75% of category revenue. Revenue = 12M units × ASIN list price from X-Ray.</div>
+    <div class="note">Lure revenue share (30%) exceeds its unit share (26%). Decoy Nest has only 2.4% revenue share despite 6% unit share. Electric and Lure together account for ~75% of category revenue. Revenue = 12M units × ASIN list price from X-Ray.</div>
   </div>
 </div>
 
@@ -664,25 +641,6 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
 <!-- SECTION 5: Strategic Metrics -->
 <h3 style="margin:28px 0 12px;font-size:.95rem;font-weight:700;color:#1e293b">Strategic Metrics</h3>
 <div class="g2" style="align-items:start">
-  <div class="card">
-    <h4 style="font-size:.85rem;font-weight:700;margin:0 0 8px">5a. DIY Comparison Rate</h4>
-    <div style="font-size:.78rem;color:#475569;margin-bottom:12px">% of all reviews mentioning vinegar, DIY, or homemade alternatives</div>
-    <div class="kpis" style="grid-template-columns:1fr 1fr;gap:8px;margin:0">
-      <div class="kpi" style="padding:10px"><div class="kpi-v" style="font-size:1.3rem">0.8%</div><div class="kpi-l">All reviews</div></div>
-      <div class="kpi" style="padding:10px"><div class="kpi-v" style="font-size:1.3rem">1.3%</div><div class="kpi-l">Negative only</div></div>
-    </div>
-    <div class="note" style="margin-top:10px">Negligible vs. fruit fly category (18–28%). Wasp customers see no easy DIY alternative — price elasticity is higher and category commoditization risk is low.</div>
-  </div>
-  <div class="card">
-    <h4 style="font-size:.85rem;font-weight:700;margin:0 0 8px">5b. Trust Damage Phrases</h4>
-    <div style="font-size:.78rem;color:#475569;margin-bottom:12px">% of all 895 reviews containing: "waste of money", "never again", "do not buy", "scam"</div>
-    <div class="kpis" style="grid-template-columns:1fr;gap:8px;margin:0">
-      <div class="kpi" style="padding:10px"><div class="kpi-v" style="font-size:1.4rem;color:#dc2626">1.8%</div><div class="kpi-l">Overall (16 reviews)</div></div>
-    </div>
-    <div class="note" style="margin-top:10px">Low trust damage rate suggests most unhappy customers are disappointed rather than outraged. Main sentiment is confusion (wrong formula, wrong insects) not betrayal.</div>
-  </div>
-</div>
-<div class="g2" style="align-items:start;margin-top:0">
   <div class="card">
     <h4 style="font-size:.85rem;font-weight:700;margin:0 0 8px">5c. Emotional Intensity Score</h4>
     <div style="font-size:.78rem;color:#475569;margin-bottom:12px">Average: CAPS words (3+ letters) + exclamation marks + strong negative words per negative review</div>
@@ -1660,125 +1618,10 @@ function sortTbl(tableId, col, th) {
     { title: 'Format Monopoly',
       text: 'RESCUE! holds 100% unit share in 6-pack ($34.58 avg) and dominates 2-pack (89%) and 3-pack (98%). Only 1-pack belongs entirely to Spectracide.' },
     { title: 'Spectracide\'s Only Turf',
-      text: 'Spectracide owns 1-pack with 67.9K units at $14.96 avg. No RESCUE! presence here — this is the one format where entry without competing against RESCUE! is possible.' },
-    { title: 'Price Ladder',
-      text: 'Clear price ladder: 1-pack $14.96 → 2-pack $19.82 → 3-pack $29.17 → 6-pack $34.58. Each step up yields more revenue per customer with lower unit competition.' },
+      text: 'Spectracide owns 1-pack with 67.9K units. No RESCUE! presence here — this is the one format where entry without competing against RESCUE! is possible.' },
     { title: 'Revenue Concentration',
       text: '6-pack generates $2.02M in Lure revenue vs $1.02M for 1-pack — twice the revenue with fewer, higher-intent buyers. RESCUE! extracts max value at the top tier.' }
   ].map(ins => `<div class="insight"><strong>${ins.title}:</strong> ${ins.text}</div>`).join('');
-
-  // ── Chart 2: Clustered Bar — Price Positioning ────────────────────────────
-  const top3ByPack = {
-    '1-pack': ['Spectracide'],
-    '2-pack': ['RESCUE!', 'Landisun', 'Stingmon'],
-    '3-pack': ['RESCUE!', 'TriskelBlue', 'Hivenlly'],
-    '6-pack': ['RESCUE!']
-  };
-  const priceBrands = [...new Set(Object.values(top3ByPack).flat())];
-  new Chart(document.getElementById('pscPriceChart'), {
-    type: 'bar',
-    plugins: [ChartDataLabels],
-    data: {
-      labels: PACK_SIZES,
-      datasets: priceBrands.map(brand => ({
-        label: brand,
-        backgroundColor: PSC_COLORS[brand] || '#94a3b8',
-        data: PACK_SIZES.map(ps => {
-          if (!top3ByPack[ps].includes(brand)) return null;
-          const row = ALL_ROWS.find(r => r.pack_size === ps && r.brand === brand);
-          return row ? Math.round(row.avg_price * 100) / 100 : null;
-        })
-      }))
-    },
-    options: {
-      maintainAspectRatio: false,
-      layout: { padding: { top: 28 } },
-      plugins: {
-        legend: { position: 'bottom', labels: { font: { size: 11 }, boxWidth: 12, padding: 10 } },
-        datalabels: {
-          display: ctx => ctx.raw != null,
-          formatter: v => v != null ? '$' + v.toFixed(2) : '',
-          anchor: 'end', align: 'end', offset: 2,
-          color: '#1e293b', font: { size: 10, weight: 'bold' }
-        },
-        tooltip: { callbacks: { label: ctx => ctx.raw != null ? ctx.dataset.label + ': $' + ctx.raw.toFixed(2) : '' } }
-      },
-      scales: {
-        x: { ticks: { font: { size: 11 } } },
-        y: {
-          ticks: { callback: v => '$' + v.toFixed(0) },
-          title: { display: true, text: 'Weighted Avg Price ($)', font: { size: 10 } }
-        }
-      }
-    }
-  });
-
-  // ── Chart 3: Bubble — Price vs Unit Share ─────────────────────────────────
-  const scatterRows = ALL_ROWS.filter(r => r.brand !== 'Others');
-  const maxRev = Math.max(...scatterRows.map(r => r.revenue));
-  const scaleR = rev => Math.max(5, Math.sqrt(rev / maxRev) * 28);
-  const scatterBrands = [...new Set(scatterRows.map(r => r.brand))];
-
-  function buildDatasets(filter) {
-    return scatterBrands.map(brand => {
-      const pts = scatterRows
-        .filter(r => r.brand === brand && (filter === 'all' || r.pack_size === filter))
-        .map(r => ({
-          x: Math.round(r.avg_price * 100) / 100,
-          y: Math.round(r.unit_share * 1000) / 10,
-          r: Math.round(scaleR(r.revenue)),
-          pack_size: r.pack_size,
-          revenue: r.revenue
-        }));
-      return {
-        label: brand,
-        data: pts,
-        backgroundColor: (PSC_COLORS[brand] || '#94a3b8') + 'aa',
-        borderColor: PSC_COLORS[brand] || '#94a3b8',
-        borderWidth: 1.5
-      };
-    }).filter(ds => ds.data.length > 0);
-  }
-
-  let _scatter = new Chart(document.getElementById('pscScatterChart'), {
-    type: 'bubble',
-    data: { datasets: buildDatasets('all') },
-    options: {
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 10, padding: 8 } },
-        datalabels: { display: false },
-        tooltip: {
-          callbacks: {
-            label: ctx => {
-              const p = ctx.raw;
-              return [
-                ctx.dataset.label + ' · ' + p.pack_size,
-                'Avg Price: $' + p.x.toFixed(2),
-                'Unit Share: ' + p.y.toFixed(1) + '%',
-                'Revenue: $' + (p.revenue / 1000).toFixed(0) + 'K'
-              ];
-            }
-          }
-        }
-      },
-      scales: {
-        x: {
-          title: { display: true, text: 'Weighted Avg Price ($)', font: { size: 10 } },
-          ticks: { callback: v => '$' + (+v).toFixed(2) }
-        },
-        y: {
-          title: { display: true, text: 'Unit Share (%)', font: { size: 10 } },
-          ticks: { callback: v => v + '%' }
-        }
-      }
-    }
-  });
-
-  window.pscFilterScatter = function() {
-    _scatter.data.datasets = buildDatasets(document.getElementById('pscFilter').value);
-    _scatter.update();
-  };
 
   // ── Table ─────────────────────────────────────────────────────────────────
   document.getElementById('pscTableBody').innerHTML = ALL_ROWS.map(r => {
@@ -1791,7 +1634,6 @@ function sortTbl(tableId, col, th) {
       <td>${dot}${r.brand}${badge}</td>
       <td data-val="${r.unit_share}">${(r.unit_share*100).toFixed(1)}%</td>
       <td data-val="${r.value_share}">${(r.value_share*100).toFixed(1)}%</td>
-      <td data-val="${r.avg_price}">$${r.avg_price.toFixed(2)}</td>
       <td data-val="${r.units}">${r.units.toLocaleString()}</td>
       <td data-val="${r.revenue}">$${(r.revenue/1000).toFixed(0)}K</td>
     </tr>`;
