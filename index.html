@@ -79,6 +79,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
 .heatmap th,.heatmap td{padding:5px 10px;text-align:center;border:1px solid #e2e8f0}
 .num-right th:not(:first-child),.num-right td:not(:first-child){text-align:right}
 #lureTop20Table th:nth-child(n+4),#lureTop20Table td:nth-child(n+4){text-align:right}
+#eoTop20Table th:nth-child(n+4),#eoTop20Table td:nth-child(n+4){text-align:right}
 .hm-g{background:#dcfce7;color:#15803d}.hm-y{background:#fef9c3;color:#854d0e}
 .hm-o{background:#ffedd5;color:#9a3412}.hm-r{background:#fee2e2;color:#991b1b}
 </style>
@@ -88,14 +89,15 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
 <header>
   <div>
     <h1>WASP — US Market Analysis Dashboard</h1>
-    <p>Source: WASP-US-x-ray.csv &nbsp;·&nbsp; Generated: 2026-03-26 &nbsp;·&nbsp; 160 ASINs &nbsp;·&nbsp; 73 Brands &nbsp;·&nbsp; All figures: 12-month (Mar 2025 – Feb 2026)</p>
+    <p>Source: WASP-US-x-ray.csv &nbsp;·&nbsp; Generated: 2026-03-26 &nbsp;·&nbsp; 156 ASINs &nbsp;·&nbsp; 60+ Brands &nbsp;·&nbsp; All figures: 12-month (Mar 2025 – Feb 2026)</p>
   </div>
 </header>
 
 <div class="tabs">
   <div class="tab active" onclick="show('ti',this)">1 — Main Segments (Total Market)</div>
-  <div class="tab" onclick="show('tb',this)">2 — Market Structure</div>
-  <div class="tab" onclick="show('tl',this)">3 — Reviews</div>
+  <div class="tab" onclick="show('tb',this)">2 — Lure Segment</div>
+  <div class="tab" onclick="show('te',this)">3 — Electric Outdoor Segment</div>
+  <div class="tab" onclick="show('tl',this)">4 — Reviews</div>
 </div>
 </div>
 
@@ -103,7 +105,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
 
 <!-- ═<!-- ═<!-- ═<!-- ═<!-- ═<!-- ═<!-- ═<!-- ═<!-- ═<!-- ═ TAB B ══════════ -->
 <div id="tb" class="panel">
-<h2>Market Structure — Lure Segment</h2>
+<h2>Lure Segment</h2>
 
 <div class="kpis" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr))">
   <div class="kpi"><div class="kpi-v">20.8%</div><div class="kpi-l">Top 1 ASIN Revenue Share</div></div>
@@ -442,9 +444,6 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
 <div id="ti" class="panel active">
 <h2>Segments Analysis</h2>
 
-<div class="insight">
-  <strong>4 segments · 40 ASINs · 13 brands · 12-month window: Mar 2025 – Feb 2026.</strong> Electric (ZEVO — plug-in fly trap) dominates by unit volume (49%) despite being a single ASIN. Lure and Sticky are the core traditional wasp trap segments. Decoy Nest is a small niche with very high spring seasonality. All revenue = 12M units × ASIN list price.
-</div>
 
 <!-- TOTAL CATEGORY KPI -->
 <div id="seg_total_kpi" style="margin-bottom:14px"></div>
@@ -491,6 +490,237 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
 
 </div>
 <!-- END TAB I -->
+
+
+<!-- ════════════════════════════════════════ TAB E — ELECTRIC OUTDOOR ══════ -->
+<div id="te" class="panel">
+<h2>Electric Outdoor Segment</h2>
+
+<div class="kpis" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr))">
+  <div class="kpi"><div class="kpi-v">10.9%</div><div class="kpi-l">Top 1 ASIN Revenue Share</div></div>
+  <div class="kpi"><div class="kpi-v">24.8%</div><div class="kpi-l">Top 3 ASINs Share</div></div>
+  <div class="kpi"><div class="kpi-v">33.1%</div><div class="kpi-l">Top 5 ASINs Share</div></div>
+  <div class="kpi"><div class="kpi-v">46.2%</div><div class="kpi-l">Top 10 ASINs Share</div></div>
+  <div class="kpi"><div class="kpi-v">13.8%</div><div class="kpi-l">Top Brand Share (Buzbug)</div></div>
+  <div class="kpi"><div class="kpi-v">$124.7M</div><div class="kpi-l">Total Electric Outdoor Rev (12M)</div></div>
+</div>
+
+<div class="g2" style="align-items:start">
+  <div class="card">
+    <h3>Brand Unit Share — Electric Outdoor (12M)</h3>
+    <div class="cw" style="height:440px"><canvas id="eoUnitPieChart"></canvas></div>
+  </div>
+  <div class="card">
+    <h3>Brand Revenue Share — Electric Outdoor (12M)</h3>
+    <div class="cw" style="height:440px"><canvas id="eoRevPieChart"></canvas></div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Brand Summary — Electric Outdoor (12M)
+    <span style="font-size:.72rem;font-weight:400;color:#64748b;margin-left:8px">Click column to sort</span>
+  </h3>
+  <div class="tbl-wrap"><table id="eoBrandTable" class="num-right">
+    <thead><tr>
+      <th>Brand</th>
+      <th class="th-sort" onclick="sortTbl('eoBrandTable',1,this)" style="cursor:pointer;user-select:none" data-asc="">Revenue (12M) ▽</th>
+      <th class="th-sort" onclick="sortTbl('eoBrandTable',2,this)" style="cursor:pointer;user-select:none" data-asc="">Share ▽</th>
+      <th class="th-sort" onclick="sortTbl('eoBrandTable',3,this)" style="cursor:pointer;user-select:none" data-asc="">ASINs ▽</th>
+      <th class="th-sort" onclick="sortTbl('eoBrandTable',4,this)" style="cursor:pointer;user-select:none" data-asc="">Total Reviews ▽</th>
+    </tr></thead>
+    <tbody>
+    <tr><td>Buzbug</td><td data-val="17252608">$17,252,608</td><td data-val="13.8">13.8%</td><td data-val="4">4</td><td data-val="13222">13,222</td></tr>
+    <tr><td>SPARTAN MOSQUITO</td><td data-val="13567972">$13,567,972</td><td data-val="10.9">10.9%</td><td data-val="1">1</td><td data-val="12658">12,658</td></tr>
+    <tr><td>Flowtron</td><td data-val="11701354">$11,701,354</td><td data-val="9.4">9.4%</td><td data-val="8">8</td><td data-val="107204">107,204</td></tr>
+    <tr><td>YISSVIC</td><td data-val="9463186">$9,463,186</td><td data-val="7.6">7.6%</td><td data-val="6">6</td><td data-val="34535">34,535</td></tr>
+    <tr><td>ASPECTEK</td><td data-val="8047973">$8,047,973</td><td data-val="6.5">6.5%</td><td data-val="4">4</td><td data-val="77576">77,576</td></tr>
+    <tr><td>zechuan</td><td data-val="5923355">$5,923,355</td><td data-val="4.8">4.8%</td><td data-val="2">2</td><td data-val="1689">1,689</td></tr>
+    <tr><td>PhatroyYee</td><td data-val="5864780">$5,864,780</td><td data-val="4.7">4.7%</td><td data-val="3">3</td><td data-val="1794">1,794</td></tr>
+    <tr><td>AMUFER</td><td data-val="5655841">$5,655,841</td><td data-val="4.5">4.5%</td><td data-val="3">3</td><td data-val="3785">3,785</td></tr>
+    <tr><td>OnBeam</td><td data-val="5459398">$5,459,398</td><td data-val="4.4">4.4%</td><td data-val="11">11</td><td data-val="5629">5,629</td></tr>
+    <tr><td>coospider-repta</td><td data-val="3473646">$3,473,646</td><td data-val="2.8">2.8%</td><td data-val="5">5</td><td data-val="2040">2,040</td></tr>
+    <tr><td>Others (50)</td><td data-val="38265508">$38,265,508</td><td data-val="30.7">30.7%</td><td data-val="67">67</td><td data-val="88258">88,258</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="card">
+  <h3>Electric Outdoor ASINs — Top 20 by Revenue
+    <span style="font-size:.72rem;font-weight:400;color:#64748b;margin-left:8px">Click column to sort</span>
+  </h3>
+  <div class="tbl-wrap"><table id="eoTop20Table">
+    <thead><tr>
+      <th>ASIN</th><th>Brand</th><th>Title</th>
+      <th class="th-sort" onclick="sortTbl('eoTop20Table',3,this)" style="cursor:pointer;user-select:none">Price ▽</th>
+      <th class="th-sort" onclick="sortTbl('eoTop20Table',4,this)" style="cursor:pointer;user-select:none">Rev (12M) ▽</th>
+      <th class="th-sort" onclick="sortTbl('eoTop20Table',5,this)" style="cursor:pointer;user-select:none">Age ▽</th>
+    </tr></thead>
+    <tbody>
+    <tr>
+      <td><a href="https://amazon.com/dp/B09B1BP1JH" target="_blank">B09B1BP1JH</a></td>
+      <td>SPARTAN MOSQUITO</td>
+      <td><span title="Spartan Mosquito Pro Tech - 1 Acre Pack 4 Tubes (2 Boxes) 100% American Made">Spartan Mosquito Pro Tech - 1 Acre Pack 4 Tube…</span></td>
+      <td data-val="44">$44.00</td>
+      <td data-val="13567972">$13,567,972</td>
+      <td data-val="55">55mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B0CNSZ5VHX" target="_blank">B0CNSZ5VHX</a></td>
+      <td>Buzbug</td>
+      <td><span title="Buzbug LED Bug Zapper Indoor Outdoor, Up to 50000 Hrs Lifespan Lamp">Buzbug LED Bug Zapper Indoor Outdoor, Up to 500…</span></td>
+      <td data-val="39.99">$39.99</td>
+      <td data-val="11709112">$11,709,112</td>
+      <td data-val="26">26mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B01LWLFB5U" target="_blank">B01LWLFB5U</a></td>
+      <td>ASPECTEK</td>
+      <td><span title="ASPECTEK Insect Killer, Bug Zapper, Powerful 20W Electronic Indoor Fly Zapper">ASPECTEK Insect Killer, Bug Zapper, Powerful 20…</span></td>
+      <td data-val="38.69">$38.69</td>
+      <td data-val="5620651">$5,620,651</td>
+      <td data-val="112">112mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B00004R9VW" target="_blank">B00004R9VW</a></td>
+      <td>Flowtron</td>
+      <td><span title="Flowtron Bug Zapper, 1 Acre of Outdoor Coverage with Powerful 40W Bulb">Flowtron Bug Zapper, 1 Acre of Outdoor Coverage…</span></td>
+      <td data-val="67.99">$67.99</td>
+      <td data-val="5242165">$5,242,165</td>
+      <td data-val="137">137mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B0CSSTGN7X" target="_blank">B0CSSTGN7X</a></td>
+      <td>zechuan</td>
+      <td><span title="Solar Bug Zapper Outdoor, 4500V Mosquito Zapper Waterproof">Solar Bug Zapper Outdoor, 4500V Mosquito Zapper…</span></td>
+      <td data-val="86.99">$86.99</td>
+      <td data-val="5183560">$5,183,560</td>
+      <td data-val="25">25mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B0FLXG4WFV" target="_blank">B0FLXG4WFV</a></td>
+      <td>YISSVIC</td>
+      <td><span title="YISSVIC Electric Fly Swatter 4000V Bug Zapper Racket Dual Modes">YISSVIC Electric Fly Swatter 4000V Bug Zapper R…</span></td>
+      <td data-val="19.96">$19.96</td>
+      <td data-val="4190143">$4,190,143</td>
+      <td data-val="7">7mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B09P88Q76X" target="_blank">B09P88Q76X</a></td>
+      <td>AMUFER</td>
+      <td><span title="Bug Zapper Outdoor Indoor, 18W Power &amp; 4400V Instant Grid Mosquito Repellent">Bug Zapper Outdoor Indoor, 18W Power &amp; 4400V…</span></td>
+      <td data-val="39.99">$39.99</td>
+      <td data-val="3167168">$3,167,168</td>
+      <td data-val="48">48mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B09P17CKH9" target="_blank">B09P17CKH9</a></td>
+      <td>Dickinda</td>
+      <td><span title="Electric Bug Zapper Indoor/Outdoor, 4200V High Powered Mosquito Zappers">Electric Bug Zapper Indoor/Outdoor, 4200V High …</span></td>
+      <td data-val="27.99">$27.99</td>
+      <td data-val="3109017">$3,109,017</td>
+      <td data-val="49">49mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B0D1VP26D1" target="_blank">B0D1VP26D1</a></td>
+      <td>PhatroyYee</td>
+      <td><span title="Solar Bug Zapper Outdoor, Waterproof Mosquito Zapper Outdoor Solar Powered">Solar Bug Zapper Outdoor, Waterproof Mosquito Z…</span></td>
+      <td data-val="79.99">$79.99</td>
+      <td data-val="3014423">$3,014,423</td>
+      <td data-val="22">22mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B0DWSJ9KX2" target="_blank">B0DWSJ9KX2</a></td>
+      <td>OnBeam</td>
+      <td><span title="Solar Bug Zapper Outdoor, Mosquito Zapper Waterproof Electric Fly Zapper">Solar Bug Zapper Outdoor, Mosquito Zapper Water…</span></td>
+      <td data-val="71.99">$71.99</td>
+      <td data-val="2829207">$2,829,207</td>
+      <td data-val="11">11mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B09V4D3BJ6" target="_blank">B09V4D3BJ6</a></td>
+      <td>BLACK+DECKER</td>
+      <td><span title="Bug Zapper Racket – Electric Fly Swatter for Gnats, Mosquitoes">Bug Zapper Racket – Electric Fly Swatter for Gn…</span></td>
+      <td data-val="19.87">$19.87</td>
+      <td data-val="2648909">$2,648,909</td>
+      <td data-val="48">48mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B0FKH77R64" target="_blank">B0FKH77R64</a></td>
+      <td>Buzbug</td>
+      <td><span title="Buzbug 50,000 Hrs Lifespan LED Bug Zapper Indoor, 3800V High-Voltage">Buzbug 50,000 Hrs Lifespan LED Bug Zapper Indoo…</span></td>
+      <td data-val="39.99">$39.99</td>
+      <td data-val="2456466">$2,456,466</td>
+      <td data-val="6">6mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B0D77RRTKJ" target="_blank">B0D77RRTKJ</a></td>
+      <td>coospider-repta</td>
+      <td><span title="Powerful Large Solar Bug Zapper Outdoor for 4000 sq.ft">Powerful Large Solar Bug Zapper Outdoor for 4000…</span></td>
+      <td data-val="101.99">$101.99</td>
+      <td data-val="2424608">$2,424,608</td>
+      <td data-val="19">19mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B09NVD3QJL" target="_blank">B09NVD3QJL</a></td>
+      <td>LUOJIBIE</td>
+      <td><span title="Bug Zapper Outdoor, Mosquito Zapper with LED Light, Fly Zapper">Bug Zapper Outdoor, Mosquito Zapper with LED Li…</span></td>
+      <td data-val="39.99">$39.99</td>
+      <td data-val="2364969">$2,364,969</td>
+      <td data-val="50">50mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B0D1R9MK2Q" target="_blank">B0D1R9MK2Q</a></td>
+      <td>PhatroyYee</td>
+      <td><span title="Solar Bug Zapper Outdoor, PhatroyYee Mosquito Zapper 4500V">Solar Bug Zapper Outdoor, PhatroyYee Mosquito Z…</span></td>
+      <td data-val="79.99">$79.99</td>
+      <td data-val="2321710">$2,321,710</td>
+      <td data-val="23">23mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B0C1CLHXC7" target="_blank">B0C1CLHXC7</a></td>
+      <td>GOOTOP</td>
+      <td><span title="Bug Zapper Outdoor, 4200V Electric Mosquito Zapper">Bug Zapper Outdoor, 4200V Electric Mosquito Zap…</span></td>
+      <td data-val="37.99">$37.99</td>
+      <td data-val="2280768">$2,280,768</td>
+      <td data-val="34">34mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B0DT6JHYHW" target="_blank">B0DT6JHYHW</a></td>
+      <td>ILCPP</td>
+      <td><span title="Bug Zapper Indoor &amp; Outdoor, 4200V Electric Mosquito Zapper">Bug Zapper Indoor &amp; Outdoor, 4200V Electric…</span></td>
+      <td data-val="35.99">$35.99</td>
+      <td data-val="2131148">$2,131,148</td>
+      <td data-val="12">12mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B00004R9VV" target="_blank">B00004R9VV</a></td>
+      <td>Flowtron</td>
+      <td><span title="Flowtron Bug Zapper, 1-1/2 Acre of Outdoor Coverage with Powerful 80W Bulb">Flowtron Bug Zapper, 1-1/2 Acre of Outdoor Cove…</span></td>
+      <td data-val="84.99">$84.99</td>
+      <td data-val="1864511">$1,864,511</td>
+      <td data-val="180">180mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B0BS13LYFF" target="_blank">B0BS13LYFF</a></td>
+      <td>YISSVIC</td>
+      <td><span title="YISSVIC Electric Fly Swatter 4000V Bug Zapper Racket Dual Modes">YISSVIC Electric Fly Swatter 4000V Bug Zapper R…</span></td>
+      <td data-val="32.99">$32.99</td>
+      <td data-val="1806170">$1,806,170</td>
+      <td data-val="35">35mo</td>
+    </tr>
+    <tr>
+      <td><a href="https://amazon.com/dp/B0CNT5BQC3" target="_blank">B0CNT5BQC3</a></td>
+      <td>Buzbug</td>
+      <td><span title="Buzbug LED Bug Zapper Indoor, LED Bulbs Up to 50,000 Hours">Buzbug LED Bug Zapper Indoor, LED Bulbs Up to 5…</span></td>
+      <td data-val="36.99">$36.99</td>
+      <td data-val="1786617">$1,786,617</td>
+      <td data-val="28">28mo</td>
+    </tr>
+    </tbody>
+  </table></div>
+</div>
+
+</div><!-- END TAB E -->
 
 
 <!-- ════════════════════════════════════════ TAB L ══════════════════════════ -->
@@ -1040,35 +1270,38 @@ const ASIN_DS = [{"label": "Natural Catch", "data": [2.2, 2.6, 3.7, 4.8, 8.3, 6.
 
 // ═══════════════ TAB I — SEGMENTS ════════════════════════════════════════════
 const SEGMENT_DATA = {
-  segments: ['Lure','Sticky','Decoy Nest','Electric'],
+  segments: ['Electric Outdoor','Electric','Sticky','Lure','Decoy Nest'],
   month_labels: ['Mar 2025','Apr 2025','May 2025','Jun 2025','Jul 2025','Aug 2025','Sep 2025','Oct 2025','Nov 2025','Dec 2025','Jan 2026','Feb 2026'],
   monthly_units: {
-    'Lure':       [8153,21993,27836,18866,25374,45263,43448,22552,7631,3314,2031,3991],
-    'Sticky':     [15633,41318,54032,33227,39943,53832,43065,28520,15393,6294,4132,4214],
-    'Decoy Nest': [3243,18062,16827,8083,8193,9602,5664,4030,2856,1288,880,1234],
-    'Electric':   [107397,318514,375569,262786,459523,816503,662238,516239,304137,98906,52825,53414]
+    'Electric Outdoor': [85445,253400,298788,209076,365545,649384,526825,410668,241916,78768,41923,42453],
+    'Lure':             [8153,21993,27836,18866,25374,45262,43448,22552,7631,3314,2031,3991],
+    'Sticky':           [15633,41317,54032,33227,39941,53821,43063,28518,15389,6297,4128,4213],
+    'Electric':         [2542,7538,8889,6221,10875,19319,15673,12218,7197,2343,1247,1263],
+    'Decoy Nest':       [3243,18062,16827,8083,8193,9599,5664,4030,2856,1288,879,1234]
   },
   monthly_rev: {
-    'Lure':       [223669,535355,640819,526864,714615,1181246,991231,468046,183206,82927,53380,112444],
-    'Sticky':     [322833,831559,1104118,652950,694405,804243,625498,362938,180516,90790,66332,71438],
-    'Decoy Nest': [31960,170580,160878,79499,85692,107765,68325,49788,33658,14177,9296,12496],
-    'Electric':   [4112996,12198217,14383168,10064145,17598392,31269968,25361641,19770438,11647457,3787759,2023185,2045423]
+    'Electric Outdoor': [3324682,9859814,11625876,8135327,14223413,25267716,20498789,15979181,9412837,3064830,1631323,1651830],
+    'Lure':             [223669,535355,640819,526864,714615,1181229,991231,468046,183206,82927,53380,112444],
+    'Sticky':           [322833,831552,1104118,652950,694391,804148,625484,362924,180488,90811,66304,71431],
+    'Electric':         [205034,608000,716963,501790,877161,1558244,1264162,985458,580490,188976,100593,101861],
+    'Decoy Nest':       [31960,170580,160878,79499,85692,107726,68325,49788,33658,14177,9287,12496]
   },
   kpis: {
-    'Lure':       {skus:22, units_12m:230452, revenue_12m:5713802,  growth_pct:null, avg_price:24.79, unit_share:4.9, rev_share:3.4},
-    'Sticky':     {skus:11, units_12m:339603, revenue_12m:5807620,  growth_pct:null, avg_price:17.10, unit_share:7.3, rev_share:3.5},
-    'Decoy Nest': {skus:4,  units_12m:79962,  revenue_12m:824114,   growth_pct:null, avg_price:10.31, unit_share:1.7, rev_share:0.5},
-    'Electric':   {skus:121,units_12m:4028051,revenue_12m:154262789,growth_pct:null, avg_price:38.29, unit_share:86.1, rev_share:92.6}
+    'Electric Outdoor': {skus:114, units_12m:3204191, revenue_12m:124675620, growth_pct:null, avg_price:38.91, unit_share:81.1, rev_share:86.2},
+    'Lure':             {skus:22,  units_12m:230451,  revenue_12m:5713785,   growth_pct:null, avg_price:24.79, unit_share:5.8,  rev_share:3.9},
+    'Sticky':           {skus:11,  units_12m:339579,  revenue_12m:5807434,   growth_pct:null, avg_price:17.10, unit_share:8.6,  rev_share:4.0},
+    'Electric':         {skus:5,   units_12m:95325,   revenue_12m:7688731,   growth_pct:null, avg_price:80.66, unit_share:2.4,  rev_share:5.3},
+    'Decoy Nest':       {skus:4,   units_12m:79958,   revenue_12m:824066,    growth_pct:null, avg_price:10.31, unit_share:2.0,  rev_share:0.6}
   }
 };
 
 const SEG_COLORS = {
-  'Lure':'#2563eb', 'Sticky':'#16a34a',
-  'Decoy Nest':'#d97706', 'Electric':'#7c3aed'
+  'Electric Outdoor':'#7c3aed', 'Lure':'#2563eb', 'Sticky':'#16a34a',
+  'Electric':'#0891b2', 'Decoy Nest':'#d97706'
 };
 const SEG_COLORS_LIGHT = {
-  'Lure':'#93c5fd', 'Sticky':'#86efac',
-  'Decoy Nest':'#fcd34d', 'Electric':'#c4b5fd'
+  'Electric Outdoor':'#c4b5fd', 'Lure':'#93c5fd', 'Sticky':'#86efac',
+  'Electric':'#a5f3fc', 'Decoy Nest':'#fcd34d'
 };
 
 let _segUnitPie, _segRevPie, _segUnitLine, _segRevLine;
@@ -1100,8 +1333,8 @@ function segInit() {
       </div>
       <div style="width:1px;height:36px;background:#e2e8f0"></div>
       <div>
-        <div style="font-size:1.6rem;font-weight:700;color:#1e293b;line-height:1">158</div>
-        <div style="font-size:.75rem;color:#64748b;margin-top:3px">ASINs · 72 Brands</div>
+        <div style="font-size:1.6rem;font-weight:700;color:#1e293b;line-height:1">156</div>
+        <div style="font-size:.75rem;color:#64748b;margin-top:3px">ASINs · 60+ Brands</div>
       </div>
     </div>`;
 
@@ -1396,6 +1629,80 @@ segInit();
       }
     });
   }
+})();
+
+// ═══════════════ TAB E — ELECTRIC OUTDOOR ════════════════════════════════════
+(function() {
+  const EO_BRANDS = {
+    'Buzbug':          { units: 430804, rev: 17252608, reviews: 13222 },
+    'SPARTAN MOSQUITO':{ units: 308363, rev: 13567972, reviews: 12658 },
+    'Flowtron':        { units: 156000, rev: 11701354, reviews: 107204 },
+    'YISSVIC':         { units: 422025, rev: 9463186,  reviews: 34535 },
+    'ASPECTEK':        { units: 234973, rev: 8047973,  reviews: 77576 },
+    'zechuan':         { units: 75674,  rev: 5923355,  reviews: 1689 },
+    'PhatroyYee':      { units: 71997,  rev: 5864780,  reviews: 1794 },
+    'AMUFER':          { units: 148348, rev: 5655841,  reviews: 3785 },
+    'OnBeam':          { units: 84191,  rev: 5459398,  reviews: 5629 },
+    'Others':          { units: 1271816,rev: 41739154, reviews: 90298 }
+  };
+  const labels = Object.keys(EO_BRANDS);
+  const colors = ['#7c3aed','#2563eb','#16a34a','#d97706','#dc2626','#0891b2','#be185d','#f59e0b','#6366f1','#94a3b8'];
+  const totalRev = Object.values(EO_BRANDS).reduce((s, b) => s + b.rev, 0);
+  const totalUnits = Object.values(EO_BRANDS).reduce((s, b) => s + b.units, 0);
+
+  const eoUnitEl = document.getElementById('eoUnitPieChart');
+  const eoRevEl  = document.getElementById('eoRevPieChart');
+  if (!eoUnitEl || !eoRevEl) return;
+
+  new Chart(eoUnitEl, {
+    type: 'pie', plugins: [ChartDataLabels],
+    data: { labels, datasets: [{ data: labels.map(l => EO_BRANDS[l].units), backgroundColor: colors, borderWidth: 2, borderColor: '#fff' }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'right',
+          labels: {
+            font: { size: 11 }, boxWidth: 14,
+            generateLabels: chart => chart.data.labels.map((l, i) => {
+              const v = chart.data.datasets[0].data[i];
+              return { text: l + '  ' + (v >= 1e6 ? (v/1e6).toFixed(1)+'M' : (v/1000).toFixed(0)+'K'), fillStyle: colors[i], strokeStyle: colors[i], lineWidth: 0, index: i, hidden: false };
+            })
+          }
+        },
+        datalabels: {
+          display: ctx => ctx.dataset.data[ctx.dataIndex] / totalUnits >= 0.05,
+          formatter: (v) => (v / totalUnits * 100).toFixed(1) + '%',
+          color: '#fff', font: { weight: 'bold', size: 12 }
+        }
+      }
+    }
+  });
+
+  new Chart(eoRevEl, {
+    type: 'pie', plugins: [ChartDataLabels],
+    data: { labels, datasets: [{ data: labels.map(l => EO_BRANDS[l].rev), backgroundColor: colors, borderWidth: 2, borderColor: '#fff' }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'right',
+          labels: {
+            font: { size: 11 }, boxWidth: 14,
+            generateLabels: chart => chart.data.labels.map((l, i) => {
+              const v = chart.data.datasets[0].data[i];
+              return { text: l + '  $' + (v >= 1e6 ? (v/1e6).toFixed(1)+'M' : (v/1000).toFixed(0)+'K'), fillStyle: colors[i], strokeStyle: colors[i], lineWidth: 0, index: i, hidden: false };
+            })
+          }
+        },
+        datalabels: {
+          display: ctx => ctx.dataset.data[ctx.dataIndex] / totalRev >= 0.05,
+          formatter: (v) => (v / totalRev * 100).toFixed(1) + '%',
+          color: '#fff', font: { weight: 'bold', size: 12 }
+        }
+      }
+    }
+  });
 })();
 
 // ═══════════════ TAB L — REVIEWS (TERRO vs HOT SHOT) ════════════════════════
