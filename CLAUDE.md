@@ -16,7 +16,7 @@ All content in this project (visualizations, labels, comments, documentation) mu
 - **Git repo:** root of this folder
 - **Tech stack:** HTML + vanilla JS, Chart.js 4.4.0 + chartjs-plugin-datalabels 2.2.0, no build step
 - **Based on:** `_template/` (adapt as needed for WASP-specific dimensions)
-- **Data source:** `Data/x-ray/Main-X-Ray-WASP.csv`
+- **Data source:** `Data/x-ray/WASP-US-x-ray.csv`
 
 ---
 
@@ -32,10 +32,10 @@ All content in this project (visualizations, labels, comments, documentation) mu
 
 | Dimension | Values |
 |-----------|--------|
-| Segment | Lure (29 ASINs), Sticky (8 ASINs), Decoy Nest (2 ASINs), Electric (1 ASIN) |
-| Brands | 13 total: RESCUE!, ZEVO, Spectracide, DECYOOL, Landisun, Sancodee, Stingmon, Qualirey, X-octenol, Jiermadun, TriskelBlue, outtkitywi, Hivenlly |
-| Season | Peak: Aug (index 2.40×), Trough: Jan (0.19×), Ratio: 12.6× |
-| Market | 983K units · $21.2M revenue (12M) |
+| Segment | Lure (22 ASINs), Sticky (11 ASINs), Decoy Nest (4 ASINs), Electric (121 ASINs) |
+| Brands | 72 total. Top Lure: RESCUE!, Spectracide, Stingmon, TriskelBlue, outtkitywi, X-octenol, Jiermadun |
+| Season | Peak: Aug (index 2.43×), Trough: Jan (0.16×), Ratio: 15.5× |
+| Market | 4.68M units · $166.6M revenue (12M) — Electric dominates at 92.6% rev share |
 
 ---
 

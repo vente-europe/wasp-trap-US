@@ -88,7 +88,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
 <header>
   <div>
     <h1>WASP — US Market Analysis Dashboard</h1>
-    <p>Source: Main-X-Ray-WASP.csv &nbsp;·&nbsp; Generated: 2026-03-03 &nbsp;·&nbsp; 40 ASINs &nbsp;·&nbsp; 13 Brands &nbsp;·&nbsp; All figures: 12-month (Mar 2025 – Feb 2026)</p>
+    <p>Source: WASP-US-x-ray.csv &nbsp;·&nbsp; Generated: 2026-03-26 &nbsp;·&nbsp; 160 ASINs &nbsp;·&nbsp; 73 Brands &nbsp;·&nbsp; All figures: 12-month (Mar 2025 – Feb 2026)</p>
   </div>
 </header>
 
@@ -106,19 +106,19 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
 <h2>Market Structure — Lure Segment</h2>
 
 <div class="kpis" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr))">
-  <div class="kpi"><div class="kpi-v">18.8%</div><div class="kpi-l">Top 1 ASIN Revenue Share</div></div>
-  <div class="kpi"><div class="kpi-v">47.8%</div><div class="kpi-l">Top 3 ASINs Share</div></div>
-  <div class="kpi"><div class="kpi-v">60.0%</div><div class="kpi-l">Top 5 ASINs Share</div></div>
-  <div class="kpi"><div class="kpi-v">81.9%</div><div class="kpi-l">Top 10 ASINs Share</div></div>
-  <div class="kpi"><div class="kpi-v">70.1%</div><div class="kpi-l">Top Brand Share (RESCUE!)</div></div>
-  <div class="kpi"><div class="kpi-v">$6.31M</div><div class="kpi-l">Total Lure Rev (12M)</div></div>
+  <div class="kpi"><div class="kpi-v">20.8%</div><div class="kpi-l">Top 1 ASIN Revenue Share</div></div>
+  <div class="kpi"><div class="kpi-v">53.0%</div><div class="kpi-l">Top 3 ASINs Share</div></div>
+  <div class="kpi"><div class="kpi-v">66.6%</div><div class="kpi-l">Top 5 ASINs Share</div></div>
+  <div class="kpi"><div class="kpi-v">88.2%</div><div class="kpi-l">Top 10 ASINs Share</div></div>
+  <div class="kpi"><div class="kpi-v">81.4%</div><div class="kpi-l">Top Brand Share (RESCUE!)</div></div>
+  <div class="kpi"><div class="kpi-v">$5.69M</div><div class="kpi-l">Total Lure Rev (12M)</div></div>
 </div>
 
 <div class="g2" style="align-items:start">
   <div class="card">
     <h3>Pack Size — Unit Share (Lure Trap, 12M)</h3>
     <div class="cw" style="height:300px"><canvas id="packUnitPieChart"></canvas></div>
-    <div class="note">Units by pack size — WASP Lure, 12M. 1-pack leads at 26.8% (Spectracide trap), 2-pack #2 at 25.4%, 6-pack #3 at 23.0%. "Other" covers 5 remaining pack sizes (8, 10, 12, 4, 7-pack).</div>
+    <div class="note">Units by pack size — WASP Lure, 12M. 6-pack leads at 15.9% of units, 2-pack #2 at 8.6%. 9 pack sizes represented including 4, 5, 8, 10, 12-pack.</div>
   </div>
   <div class="card">
     <h3>Pack Size — Revenue Share (Lure Trap, 12M)</h3>
@@ -131,12 +131,12 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
   <div class="card">
     <h3>Brand Units Share — Lure (12M)</h3>
     <div class="cw" style="height:440px"><canvas id="brandUnitsPieChart"></canvas></div>
-    <div class="note">Unit distribution among Lure brands (12M). RESCUE! dominates at 70.1% (177K units), Spectracide #2 at 26.8% (68K units). Landisun 2.7%. Duopoly market.</div>
+    <div class="note">Unit distribution among Lure brands (12M). RESCUE! dominates at 69.2% (159K units), Spectracide #2 at 29.4% (68K units). Duopoly market.</div>
   </div>
   <div class="card">
     <h3>Brand Revenue Share — Lure (12M)</h3>
     <div class="cw" style="height:440px"><canvas id="brandRevPieChart"></canvas></div>
-    <div class="note">Revenue split: RESCUE! 82.5% ($5.21M) — premium pricing amplifies dominance. Spectracide 16.1% ($1.02M) on price-competitive 1-pack traps. Very high entry barrier.</div>
+    <div class="note">Revenue split: RESCUE! 81.2% ($4.64M) — premium pricing amplifies dominance. Spectracide 17.8% ($1.02M) on price-competitive 1-pack traps. Very high entry barrier.</div>
   </div>
 </div>
 
@@ -145,19 +145,19 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
   <h3>Brand Share by Pack Size — Lure (Units, 12M)</h3>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px;margin-top:12px">
     <div>
-      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">1-pack &nbsp;·&nbsp; 67.9K units</p>
+      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">1-pack &nbsp;·&nbsp; 14.2K units</p>
       <div class="cw" style="height:260px"><canvas id="packBrand1Chart"></canvas></div>
     </div>
     <div>
-      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">2-pack &nbsp;·&nbsp; 64.4K units</p>
+      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">2-pack &nbsp;·&nbsp; 45.3K units</p>
       <div class="cw" style="height:260px"><canvas id="packBrand2Chart"></canvas></div>
     </div>
     <div>
-      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">3-pack &nbsp;·&nbsp; 28.1K units</p>
+      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">3-pack &nbsp;·&nbsp; 13.6K units</p>
       <div class="cw" style="height:260px"><canvas id="packBrand3Chart"></canvas></div>
     </div>
     <div>
-      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">6-pack &nbsp;·&nbsp; 58.3K units</p>
+      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">6-pack &nbsp;·&nbsp; 36.5K units</p>
       <div class="cw" style="height:260px"><canvas id="packBrand6Chart"></canvas></div>
     </div>
   </div>
@@ -169,19 +169,19 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
   <h3>Brand Share by Pack Size — Lure (Revenue, 12M)</h3>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px;margin-top:12px">
     <div>
-      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">1-pack &nbsp;·&nbsp; $1.02M</p>
+      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">1-pack &nbsp;·&nbsp; $0.21M</p>
       <div class="cw" style="height:260px"><canvas id="packBrand1RevChart"></canvas></div>
     </div>
     <div>
-      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">2-pack &nbsp;·&nbsp; $1.21M</p>
+      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">2-pack &nbsp;·&nbsp; $0.83M</p>
       <div class="cw" style="height:260px"><canvas id="packBrand2RevChart"></canvas></div>
     </div>
     <div>
-      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">3-pack &nbsp;·&nbsp; $0.82M</p>
+      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">3-pack &nbsp;·&nbsp; $0.58M</p>
       <div class="cw" style="height:260px"><canvas id="packBrand3RevChart"></canvas></div>
     </div>
     <div>
-      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">6-pack &nbsp;·&nbsp; $2.02M</p>
+      <p style="text-align:center;font-size:.8rem;font-weight:700;color:#475569;margin:0 0 8px">6-pack &nbsp;·&nbsp; $2.06M</p>
       <div class="cw" style="height:260px"><canvas id="packBrand6RevChart"></canvas></div>
     </div>
   </div>
@@ -233,10 +233,10 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
   <div class="tbl-wrap"><table class="num-right">
     <thead><tr><th>Brand</th><th>Rev (12M)</th><th>Share</th><th>ASINs</th><th>Avg Rating</th><th>Total Reviews</th></tr></thead>
     <tbody>
-    <tr><td>RESCUE!</td><td>$5,208,000</td><td>82.5%</td><td>18</td><td>4.1</td><td>33,042</td></tr>
-    <tr><td>Spectracide</td><td>$1,016,276</td><td>16.1%</td><td>2</td><td>3.3</td><td>990</td></tr>
-    <tr><td>Landisun</td><td>$68,152</td><td>1.1%</td><td>1</td><td>3.8</td><td>361</td></tr>
-    <tr><td>Others</td><td>$19,772</td><td>0.3%</td><td>8</td><td>—</td><td>178</td></tr>
+    <tr><td>RESCUE!</td><td>$4,640,793</td><td>81.2%</td><td>16</td><td>4.0</td><td>38,208</td></tr>
+    <tr><td>Spectracide</td><td>$1,015,370</td><td>17.8%</td><td>1</td><td>2.9</td><td>868</td></tr>
+    <tr><td>Stingmon</td><td>$40,810</td><td>0.7%</td><td>1</td><td>5.0</td><td>2</td></tr>
+    <tr><td>Others</td><td>$16,829</td><td>0.3%</td><td>4</td><td>—</td><td>121</td></tr>
     </tbody>
   </table></div>
 </div>
@@ -258,7 +258,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
       <td>RESCUE!</td>
       <td><span title="Rescue! Outdoor Disposable Hanging Fly Trap - 6 Traps">Rescue! Outdoor Disposable Hanging Fly Trap - 6 T…</span></td>
       <td data-val="31.99">$31.99</td>
-      <td data-val="1185869">$1,185,869</td>
+      <td data-val="1185741">$1,185,741</td>
       <td>5,744</td>
       <td>2,030</td>
       <td>87mo</td>
@@ -268,7 +268,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
       <td>Spectracide</td>
       <td><span title="Spectracide Wasp, Hornet &amp; Yellowjacket Trap, Hanging Wasp &amp; Hornet Trap with a Quick-Drown Formula That Submerges &amp; Kills Insects, 1 Count">Spectracide Wasp, Hornet &amp; Yellowjacket Trap,…</span></td>
       <td data-val="14.97">$14.97</td>
-      <td data-val="1015385">$1,015,385</td>
+      <td data-val="1015370">$1,015,370</td>
       <td>1,458</td>
       <td>868</td>
       <td>17mo</td>
@@ -278,7 +278,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
       <td>RESCUE!</td>
       <td><span title="RESCUE! Disposable Summer Yellowjacket Trap - Mountain &amp; Pacific Formula - 6 Traps">RESCUE! Disposable Summer Yellowjacket Trap - Mo…</span></td>
       <td data-val="39.31">$39.31</td>
-      <td data-val="813599">$813,599</td>
+      <td data-val="813796">$813,796</td>
       <td>5,463</td>
       <td>3,079</td>
       <td>119mo</td>
@@ -288,7 +288,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
       <td>RESCUE!</td>
       <td><span title="RESCUE! Yellowjacket Attractant Cartridge (10 Week Supply) – for RESCUE! Reusable Yellowjacket Traps - (5 Pack)">RESCUE! Yellowjacket Attractant Cartridge (10 We…</span></td>
       <td data-val="29.99">$29.99</td>
-      <td data-val="455308">$455,308</td>
+      <td data-val="455698">$455,698</td>
       <td>4,036</td>
       <td>886</td>
       <td>128mo</td>
@@ -298,7 +298,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
       <td>RESCUE!</td>
       <td><span title="RESCUE! Non-Toxic Wasp, Hornet, Yellowjacket Trap (WHY Trap) Attractant Refill - 2 Week Refill - 8 Pack">RESCUE! Non-Toxic Wasp, Hornet, Yellowjacket Tra…</span></td>
       <td data-val="39.87">$39.87</td>
-      <td data-val="318322">$318,322</td>
+      <td data-val="318442">$318,442</td>
       <td>18,747</td>
       <td>694</td>
       <td>132mo</td>
@@ -308,27 +308,17 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
       <td>RESCUE!</td>
       <td><span title="RESCUE! Reusable Yellowjacket Trap - 2 Pack + 2 Ten-Week Refills">RESCUE! Reusable Yellowjacket Trap - 2 Pack + 2 …</span></td>
       <td data-val="38.75">$38.75</td>
-      <td data-val="311356">$311,356</td>
+      <td data-val="311318">$311,318</td>
       <td>6,068</td>
       <td>6,014</td>
       <td>76mo</td>
-    </tr>
-    <tr>
-      <td><a href="https://amazon.com/dp/B07SVF3NND" target="_blank">B07SVF3NND</a></td>
-      <td>RESCUE!</td>
-      <td><span title="RESCUE! Reusable Yellowjacket Trap – Includes Attractant - 2 Traps">RESCUE! Reusable Yellowjacket Trap – Includes At…</span></td>
-      <td data-val="25.19">$25.19</td>
-      <td data-val="306336">$306,336</td>
-      <td>73,080</td>
-      <td>540</td>
-      <td>81mo</td>
     </tr>
     <tr>
       <td><a href="https://amazon.com/dp/B07SR17BZ7" target="_blank">B07SR17BZ7</a></td>
       <td>RESCUE!</td>
       <td><span title="RESCUE! WHY Trap for Wasps, Hornets, &amp; Yellowjackets – Hanging Outdoor Trap - 3 Traps">RESCUE! WHY Trap for Wasps, Hornets, &amp; Yellow…</span></td>
       <td data-val="42.18">$42.18</td>
-      <td data-val="290198">$290,198</td>
+      <td data-val="290536">$290,536</td>
       <td>20,311</td>
       <td>269</td>
       <td>81mo</td>
@@ -338,27 +328,17 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
       <td>RESCUE!</td>
       <td><span title="RESCUE! Disposable Yellowjacket Trap - Mountain &amp; Pacific Formula - 12 Traps">RESCUE! Disposable Yellowjacket Trap - Mountain …</span></td>
       <td data-val="68.47">$68.47</td>
-      <td data-val="242178">$242,178</td>
+      <td data-val="243342">$243,342</td>
       <td>73,654</td>
       <td>139</td>
       <td>130mo</td>
-    </tr>
-    <tr>
-      <td><a href="https://amazon.com/dp/B07SVF6WGQ" target="_blank">B07SVF6WGQ</a></td>
-      <td>RESCUE!</td>
-      <td><span title="RESCUE! Reusable Yellowjacket Trap – Includes Attractant - 3 Traps">RESCUE! Reusable Yellowjacket Trap – Includes At…</span></td>
-      <td data-val="36.11">$36.11</td>
-      <td data-val="228360">$228,360</td>
-      <td>120,821</td>
-      <td>211</td>
-      <td>81mo</td>
     </tr>
     <tr>
       <td><a href="https://amazon.com/dp/B00W8GV85A" target="_blank">B00W8GV85A</a></td>
       <td>RESCUE!</td>
       <td><span title="RESCUE! Yellowjacket Attractant – for RESCUE! Reusable Yellowjacket Traps – 4 Week Supply - 2 Pack">RESCUE! Yellowjacket Attractant – for RESCUE! Re…</span></td>
       <td data-val="9.42">$9.42</td>
-      <td data-val="205497">$205,497</td>
+      <td data-val="205573">$205,573</td>
       <td>8,119</td>
       <td>1,350</td>
       <td>131mo</td>
@@ -368,7 +348,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
       <td>RESCUE!</td>
       <td><span title="RESCUE! Non-Toxic Wasp, Hornet, Yellowjacket Trap (WHY Trap) Attractant Refill - 2 Week Refill - 3 Pack">RESCUE! Non-Toxic Wasp, Hornet, Yellowjacket Tra…</span></td>
       <td data-val="15.09">$15.09</td>
-      <td data-val="178711">$178,711</td>
+      <td data-val="178832">$178,832</td>
       <td>8,231</td>
       <td>1,827</td>
       <td>112mo</td>
@@ -378,7 +358,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
       <td>RESCUE!</td>
       <td><span title="RESCUE! Yellowjacket Attractant – for RESCUE! Reusable Yellowjacket Traps – 4 Week Supply - 10 Pack">RESCUE! Yellowjacket Attractant – for RESCUE! Re…</span></td>
       <td data-val="32.35">$32.35</td>
-      <td data-val="156542">$156,542</td>
+      <td data-val="156380">$156,380</td>
       <td>31,126</td>
       <td>362</td>
       <td>130mo</td>
@@ -388,7 +368,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
       <td>RESCUE!</td>
       <td><span title="RESCUE! Reusable Yellowjacket Trap - 2 Pack + 2 Four-Week Refills">RESCUE! Reusable Yellowjacket Trap - 2 Pack + 2 …</span></td>
       <td data-val="32.29">$32.29</td>
-      <td data-val="145531">$145,531</td>
+      <td data-val="145176">$145,176</td>
       <td>6,068</td>
       <td>6,014</td>
       <td>60mo</td>
@@ -398,7 +378,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
       <td>RESCUE!</td>
       <td><span title="RESCUE! Disposable Yellowjacket Trap - Central &amp; Eastern Formula - 2 Traps">RESCUE! Disposable Yellowjacket Trap - Central &amp;…</span></td>
       <td data-val="13.49">$13.49</td>
-      <td data-val="121248">$121,248</td>
+      <td data-val="121275">$121,275</td>
       <td>28,633</td>
       <td>815</td>
       <td>62mo</td>
@@ -408,37 +388,17 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
       <td>RESCUE!</td>
       <td><span title="RESCUE! WHY Trap for Wasps, Hornets, &amp; Yellowjackets – Hanging Outdoor Trap - 3 Traps">RESCUE! WHY Trap for Wasps, Hornets, &amp; Yellow…</span></td>
       <td data-val="41.72">$41.72</td>
-      <td data-val="110349">$110,349</td>
+      <td data-val="110308">$110,308</td>
       <td>11,359</td>
       <td>1,111</td>
       <td>114mo</td>
-    </tr>
-    <tr>
-      <td><a href="https://amazon.com/dp/B01IF3OUQS" target="_blank">B01IF3OUQS</a></td>
-      <td>RESCUE!</td>
-      <td><span title="RESCUE! Non-Toxic Wasp, Hornet, Yellowjacket Trap (WHY Trap) Attractant Refill - 2 Week Refill - 7 Pack">RESCUE! Non-Toxic Wasp, Hornet, Yellowjacket Tra…</span></td>
-      <td data-val="28.99">$28.99</td>
-      <td data-val="74011">$74,011</td>
-      <td>58,271</td>
-      <td>97</td>
-      <td>109mo</td>
-    </tr>
-    <tr>
-      <td><a href="https://amazon.com/dp/B0D6R9LYY1" target="_blank">B0D6R9LYY1</a></td>
-      <td>Landisun</td>
-      <td><span title="Landisun Wasps Bees Traps Outdoor Hanging Catcher Deterrent Killer Insect Catcher Non-Toxic Reusable Hornet Yellow Jacket 2 Pack">Landisun Wasps Bees Traps Outdoor Hanging Catche…</span></td>
-      <td data-val="9.99">$9.99</td>
-      <td data-val="68152">$68,152</td>
-      <td>27,835</td>
-      <td>361</td>
-      <td>21mo</td>
     </tr>
     <tr>
       <td><a href="https://amazon.com/dp/B003URK9UG" target="_blank">B003URK9UG</a></td>
       <td>RESCUE!</td>
       <td><span title="RESCUE! Reusable Yellowjacket Trap - 2 Pack">RESCUE! Reusable Yellowjacket Trap - 2 Pack</span></td>
       <td data-val="24.94">$24.94</td>
-      <td data-val="48882">$48,882</td>
+      <td data-val="49007">$49,007</td>
       <td>6,068</td>
       <td>6,014</td>
       <td>82mo</td>
@@ -448,7 +408,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
       <td>RESCUE!</td>
       <td><span title="RESCUE! Disposable Summer Yellowjacket Trap - Central &amp; Eastern Formula - 6 Traps">RESCUE! Disposable Summer Yellowjacket Trap - Ce…</span></td>
       <td data-val="30.77">$30.77</td>
-      <td data-val="15693">$15,693</td>
+      <td data-val="15723">$15,723</td>
       <td>21,336</td>
       <td>1,590</td>
       <td>91mo</td>
@@ -505,7 +465,7 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
     <h3>Market Share — Revenue (12M)</h3>
     <div id="seg_pie_rev_total" style="font-size:.82rem;color:#64748b;margin:-6px 0 10px"></div>
     <div class="cw" style="height:320px"><canvas id="segRevPieChart"></canvas></div>
-    <div class="note">Lure revenue share (30%) exceeds its unit share (26%). Decoy Nest has only 2.4% revenue share despite 6% unit share. Electric and Lure together account for ~75% of category revenue. Revenue = 12M units × ASIN list price from X-Ray.</div>
+    <div class="note">Electric dominates at 92.6% revenue share with 121 ASINs. Lure (3.4%) and Sticky (3.5%) are comparable. Decoy Nest has only 0.5% revenue share. Revenue = 12M units × ASIN list price from X-Ray.</div>
   </div>
 </div>
 
@@ -1083,22 +1043,22 @@ const SEGMENT_DATA = {
   segments: ['Lure','Sticky','Decoy Nest','Electric'],
   month_labels: ['Mar 2025','Apr 2025','May 2025','Jun 2025','Jul 2025','Aug 2025','Sep 2025','Oct 2025','Nov 2025','Dec 2025','Jan 2026','Feb 2026'],
   monthly_units: {
-    'Lure':       [9850,24524,31294,20909,27899,48397,47708,24889,7916,3362,2114,4345],
-    'Sticky':     [12341,30643,41462,23780,22406,22361,17360,8443,3646,2504,2093,2184],
-    'Decoy Nest': [2651,16305,14754,6632,5656,5095,2009,1178,1174,744,584,938],
-    'Electric':   [0,0,0,0,30212,120771,97106,111936,80125,22780,11132,9366]
+    'Lure':       [8153,21993,27836,18866,25374,45263,43448,22552,7631,3314,2031,3991],
+    'Sticky':     [15633,41318,54032,33227,39943,53832,43065,28520,15393,6294,4132,4214],
+    'Decoy Nest': [3243,18062,16827,8083,8193,9602,5664,4030,2856,1288,880,1234],
+    'Electric':   [107397,318514,375569,262786,459523,816503,662238,516239,304137,98906,52825,53414]
   },
   monthly_rev: {
-    'Lure':       [245561,611383,780159,521031,695280,1206442,1189265,620291,197283,83814,52663,108241],
-    'Sticky':     [310233,770369,1042355,597793,563287,562156,436430,212257,91660,62951,52618,54906],
-    'Decoy Nest': [23806,146419,132491,59555,50791,45753,18041,10579,10543,6681,5244,8423],
-    'Electric':   [0,0,0,0,603134,2411797,1939207,2235272,1600096,454915,222306,187029]
+    'Lure':       [223669,535355,640819,526864,714615,1181246,991231,468046,183206,82927,53380,112444],
+    'Sticky':     [322833,831559,1104118,652950,694405,804243,625498,362938,180516,90790,66332,71438],
+    'Decoy Nest': [31960,170580,160878,79499,85692,107765,68325,49788,33658,14177,9296,12496],
+    'Electric':   [4112996,12198217,14383168,10064145,17598392,31269968,25361641,19770438,11647457,3787759,2023185,2045423]
   },
   kpis: {
-    'Lure':       {skus:29, units_12m:253207, revenue_12m:6312206,  growth_pct:null, avg_price:24.93, unit_share:25.7, rev_share:29.7},
-    'Sticky':     {skus:8,  units_12m:189220, revenue_12m:4756783,  growth_pct:null, avg_price:25.14, unit_share:19.2, rev_share:22.4},
-    'Decoy Nest': {skus:2,  units_12m:57719,  revenue_12m:518182,   growth_pct:null, avg_price:8.98,  unit_share:5.9,  rev_share:2.4},
-    'Electric':   {skus:1,  units_12m:483428, revenue_12m:9654056,  growth_pct:null, avg_price:19.97, unit_share:49.2, rev_share:45.4}
+    'Lure':       {skus:22, units_12m:230452, revenue_12m:5713802,  growth_pct:null, avg_price:24.79, unit_share:4.9, rev_share:3.4},
+    'Sticky':     {skus:11, units_12m:339603, revenue_12m:5807620,  growth_pct:null, avg_price:17.10, unit_share:7.3, rev_share:3.5},
+    'Decoy Nest': {skus:4,  units_12m:79962,  revenue_12m:824114,   growth_pct:null, avg_price:10.31, unit_share:1.7, rev_share:0.5},
+    'Electric':   {skus:121,units_12m:4028051,revenue_12m:154262789,growth_pct:null, avg_price:38.29, unit_share:86.1, rev_share:92.6}
   }
 };
 
@@ -1140,8 +1100,8 @@ function segInit() {
       </div>
       <div style="width:1px;height:36px;background:#e2e8f0"></div>
       <div>
-        <div style="font-size:1.6rem;font-weight:700;color:#1e293b;line-height:1">40</div>
-        <div style="font-size:.75rem;color:#64748b;margin-top:3px">ASINs · 13 Brands</div>
+        <div style="font-size:1.6rem;font-weight:700;color:#1e293b;line-height:1">158</div>
+        <div style="font-size:.75rem;color:#64748b;margin-top:3px">ASINs · 72 Brands</div>
       </div>
     </div>`;
 
@@ -1568,33 +1528,50 @@ function sortTbl(tableId, col, th) {
   const PSC_COLORS = {
     'RESCUE!':     '#2563eb',
     'Spectracide': '#16a34a',
-    'Landisun':    '#d97706',
+    'outtkitywi':  '#d97706',
     'Stingmon':    '#7c3aed',
     'TriskelBlue': '#0891b2',
-    'Hivenlly':    '#be185d',
+    'X-octenol':   '#be185d',
+    'Jiermadun':   '#f43f5e',
     'Others':      '#94a3b8'
   };
 
   const PSC_RAW = {
     '1-pack': [
-      { brand: 'Spectracide', units: 67932, revenue: 1016276 }
+      { brand: 'Spectracide', units: 67827, revenue: 1015370 },
+      { brand: 'RESCUE!',     units: 2926,  revenue: 39647   }
     ],
     '2-pack': [
-      { brand: 'RESCUE!',   units: 57466, revenue: 1138839 },
-      { brand: 'Landisun',  units: 6822,  revenue: 68152   },
-      { brand: 'Stingmon',  units: 72,    revenue: 1459    }
+      { brand: 'RESCUE!', units: 45308, revenue: 832348 }
     ],
     '3-pack': [
-      { brand: 'RESCUE!',     units: 27692, revenue: 807815 },
-      { brand: 'TriskelBlue', units: 401,   revenue: 7615   },
-      { brand: 'Hivenlly',    units: 49,    revenue: 832    }
+      { brand: 'RESCUE!',     units: 21383, revenue: 579675 },
+      { brand: 'TriskelBlue', units: 395,   revenue: 7501   }
+    ],
+    '4-pack': [
+      { brand: 'outtkitywi', units: 220, revenue: 5496  },
+      { brand: 'X-octenol',  units: 108, revenue: 2915  },
+      { brand: 'Jiermadun',  units: 34,  revenue: 918   }
+    ],
+    '5-pack': [
+      { brand: 'RESCUE!', units: 15195, revenue: 455698 }
     ],
     '6-pack': [
-      { brand: 'RESCUE!', units: 58277, revenue: 2015364 }
+      { brand: 'RESCUE!',  units: 58279, revenue: 2015260 },
+      { brand: 'Stingmon', units: 2402,  revenue: 40810   }
+    ],
+    '8-pack': [
+      { brand: 'RESCUE!', units: 7987, revenue: 318442 }
+    ],
+    '10-pack': [
+      { brand: 'RESCUE!', units: 4834, revenue: 156380 }
+    ],
+    '12-pack': [
+      { brand: 'RESCUE!', units: 3554, revenue: 243342 }
     ]
   };
 
-  const PACK_SIZES = ['1-pack', '2-pack', '3-pack', '6-pack'];
+  const PACK_SIZES = ['1-pack', '2-pack', '3-pack', '4-pack', '5-pack', '6-pack', '8-pack', '10-pack', '12-pack'];
 
   function enrich(packSize) {
     const rows = PSC_RAW[packSize];
