@@ -231,12 +231,12 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
 <div class="card">
   <h3>Brand Summary — Lure (12M)</h3>
   <div class="tbl-wrap"><table class="num-right">
-    <thead><tr><th>Brand</th><th>Rev (12M)</th><th>Share</th><th>ASINs</th><th>Avg Rating</th><th>Total Reviews</th></tr></thead>
+    <thead><tr><th>Brand</th><th>Rev (12M)</th><th>Share</th><th>ASINs</th><th>Total Reviews</th></tr></thead>
     <tbody>
-    <tr><td>RESCUE!</td><td>$4,640,793</td><td>81.2%</td><td>16</td><td>4.0</td><td>38,208</td></tr>
-    <tr><td>Spectracide</td><td>$1,015,370</td><td>17.8%</td><td>1</td><td>2.9</td><td>868</td></tr>
-    <tr><td>Stingmon</td><td>$40,810</td><td>0.7%</td><td>1</td><td>5.0</td><td>2</td></tr>
-    <tr><td>Others</td><td>$16,829</td><td>0.3%</td><td>4</td><td>—</td><td>121</td></tr>
+    <tr><td>RESCUE!</td><td>$4,640,793</td><td>81.2%</td><td>16</td><td>38,208</td></tr>
+    <tr><td>Spectracide</td><td>$1,015,370</td><td>17.8%</td><td>1</td><td>868</td></tr>
+    <tr><td>Stingmon</td><td>$40,810</td><td>0.7%</td><td>1</td><td>2</td></tr>
+    <tr><td>Others</td><td>$16,829</td><td>0.3%</td><td>4</td><td>121</td></tr>
     </tbody>
   </table></div>
 </div>
@@ -474,13 +474,13 @@ h2{font-size:1rem;margin-bottom:16px;color:#1e293b;font-weight:700}
 <div class="card">
   <h3>Segment Summary (12M)</h3>
   <div class="tbl-wrap">
-    <table>
+    <table id="segSummaryTable">
       <thead><tr>
         <th>Segment</th>
-        <th style="text-align:right">Units (12M)</th>
-        <th style="text-align:right">Revenue (12M)</th>
-        <th style="text-align:right">Unit Share</th>
-        <th style="text-align:right">Rev Share</th>
+        <th class="th-sort" onclick="sortTbl('segSummaryTable',1,this)" style="cursor:pointer;user-select:none;text-align:right" data-asc="">Units (12M) ▽</th>
+        <th class="th-sort" onclick="sortTbl('segSummaryTable',2,this)" style="cursor:pointer;user-select:none;text-align:right" data-asc="">Revenue (12M) ▽</th>
+        <th class="th-sort" onclick="sortTbl('segSummaryTable',3,this)" style="cursor:pointer;user-select:none;text-align:right" data-asc="">Unit Share ▽</th>
+        <th class="th-sort" onclick="sortTbl('segSummaryTable',4,this)" style="cursor:pointer;user-select:none;text-align:right" data-asc="">Rev Share ▽</th>
       </tr></thead>
       <tbody id="seg_summary_tbody"></tbody>
     </table>
@@ -1169,34 +1169,53 @@ function segInit() {
     return _piePct(v, ctx) + '%\n$' + (k.revenue_12m / 1e6).toFixed(1) + 'M';
   };
   const pieIsSmall = (ctx) => ctx.dataset.data[ctx.dataIndex] / ctx.dataset.data.reduce((a,b) => a+b, 0) < 0.10;
-  const pieOpts = (pos, fmt) => ({
+  const pieBase = (pos, fmt) => ({
     responsive: true, maintainAspectRatio: false,
     plugins: {
       legend: { position: pos, labels: { font: { size: 11 }, boxWidth: 14 } },
       datalabels: {
+        display: (ctx) => !pieIsSmall(ctx),
         formatter: fmt,
-        anchor: (ctx) => pieIsSmall(ctx) ? 'end' : 'center',
-        align:  (ctx) => pieIsSmall(ctx) ? 'end' : 'center',
-        color:  (ctx) => pieIsSmall(ctx) ? '#1e293b' : '#fff',
-        offset: (ctx) => pieIsSmall(ctx) ? 22 : 0,
+        anchor: 'center',
+        align: 'center',
+        color: '#fff',
         font: { weight: 'bold', size: 13 },
         textAlign: 'center'
       }
     }
   });
 
+  const unitPieOpts = pieBase('right', pieFmtUnits);
+  unitPieOpts.plugins.legend.labels.generateLabels = chart => {
+    const total = chart.data.datasets[0].data.reduce((a,b) => a+b, 0);
+    return chart.data.labels.map((label, i) => {
+      const v = chart.data.datasets[0].data[i];
+      const vFmt = v >= 1e6 ? (v/1e6).toFixed(1)+'M' : (v/1000).toFixed(0)+'K';
+      return { text: label + '  ' + vFmt, fillStyle: colors[i], strokeStyle: colors[i], lineWidth: 0, index: i, hidden: false };
+    });
+  };
+
+  const revPieOpts = pieBase('right', pieFmtRev);
+  revPieOpts.plugins.legend.labels.generateLabels = chart => {
+    return chart.data.labels.map((label, i) => {
+      const v = chart.data.datasets[0].data[i];
+      const vFmt = '$' + (v >= 1e6 ? (v/1e6).toFixed(1)+'M' : (v/1000).toFixed(0)+'K');
+      return { text: label + '  ' + vFmt, fillStyle: colors[i], strokeStyle: colors[i], lineWidth: 0, index: i, hidden: false };
+    });
+  };
+
   if (_segUnitPie) _segUnitPie.destroy();
   _segUnitPie = new Chart(document.getElementById('segUnitPieChart'), {
-    type: 'pie', plugins: [ChartDataLabels, pieLinePlugin],
+    type: 'pie', plugins: [ChartDataLabels],
     data: { labels: segs, datasets: [{ data: segs.map(s => SD.kpis[s].units_12m), backgroundColor: colors, borderWidth: 2, borderColor: '#fff' }] },
-    options: pieOpts('right', pieFmtUnits)
+    options: unitPieOpts
   });
 
   if (_segRevPie) _segRevPie.destroy();
   _segRevPie = new Chart(document.getElementById('segRevPieChart'), {
-    type: 'pie', plugins: [ChartDataLabels, pieLinePlugin],
+    type: 'pie', plugins: [ChartDataLabels],
     data: { labels: segs, datasets: [{ data: segs.map(s => SD.kpis[s].revenue_12m), backgroundColor: colors, borderWidth: 2, borderColor: '#fff' }] },
-    options: pieOpts('right', pieFmtRev)
+    options: revPieOpts
   });
 
   // ── Growth charts ────────────────────────────────────────────────────────
@@ -1272,10 +1291,10 @@ function segInit() {
     const gc = k.growth_pct !== null ? (k.growth_pct >= 0 ? 'delta-pos' : 'delta-neg') : 'delta-neu';
     return `<tr>
       <td><strong style="color:${c}">${s}</strong></td>
-      <td style="text-align:right">${k.units_12m.toLocaleString('en-US',{maximumFractionDigits:0})}</td>
-      <td style="text-align:right">$${k.revenue_12m.toLocaleString('en-US',{maximumFractionDigits:0})}</td>
-      <td style="text-align:right">${k.unit_share}%</td>
-      <td style="text-align:right">${k.rev_share}%</td>
+      <td style="text-align:right" data-val="${k.units_12m}">${k.units_12m.toLocaleString('en-US',{maximumFractionDigits:0})}</td>
+      <td style="text-align:right" data-val="${k.revenue_12m}">$${k.revenue_12m.toLocaleString('en-US',{maximumFractionDigits:0})}</td>
+      <td style="text-align:right" data-val="${k.unit_share}">${k.unit_share}%</td>
+      <td style="text-align:right" data-val="${k.rev_share}">${k.rev_share}%</td>
     </tr>`;
   }).join('');
 }
