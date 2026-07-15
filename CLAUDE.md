@@ -7,6 +7,8 @@
 ## Language
 All content in this project (visualizations, labels, comments, documentation) must be in **English**.
 
+**Exception (Tom, 2026-07-15):** in tab 8 (POE Review Insights) the explanation layer is in **Polish**: the source box and the insight boxes under the tables ("Jak czytać delty POE", "Co mówi wykres impactu"). Rules for these boxes: no em-dashes, bullet lists, and ONE uniform format — standard `.insight` styling only (no per-box background/color overrides). Tables and data labels stay in English.
+
 ---
 
 ## Project Overview
@@ -24,9 +26,16 @@ All content in this project (visualizations, labels, comments, documentation) mu
 
 | Tab | Content |
 |-----|---------|
-| 1 — Segments Analysis | Total KPIs, segment KPI cards, market share pies, segment summary table, brand % unit share, monthly seasonality index |
-| 2 — Market Structure | Fruit fly template data (placeholder) |
-| 3 — Reviews | Fruit fly template data (placeholder) |
+| 1 — Main Segments (Total Market) | Total KPIs, segment KPI cards, market share pies, segment summary table, brand % unit share, monthly seasonality index |
+| 2 — Lure Segment | Lure segment deep-dive |
+| 3 — Electric Outdoor Segment | Electric segment deep-dive |
+| 4 — Reviews | 895-review failure-type analysis (Helium 10 scrape Feb 2026) |
+| 5 — VOC Category (`v1`) | Voice of the Customer — whole lure-trap category, built from `Data/reviews/reviews_wasp_by_stars.json` (895 reviews) |
+| 6 — VOC Spectracide Trap (`v2`) | VOC — Spectracide Wasp & Hornet Trap, built from `Data/reviews/wasp_trap_reviews.csv` (312 reviews: 270 from `wasp reviews.docx` merged 2026-07-15 + 42 archival) |
+| 7 — VOC Trap Refill (`v3`) | VOC — Spectracide Trap Refill, built from `Data/reviews/wasp_trap_refill_reviews.csv` (56 reviews; 1★-skewed sample — see in-tab caveat) |
+| 8 — POE Review Insights (`tp`) | Amazon Product Opportunity Explorer data ONLY (Customer Review Insights, 6-month window, captured 11-12 Jul 2026): our-product-vs-category topic tables (section title "Spectracide vs Category") with columns: **Our ASIN (POE)** / **Review scrape** / Category avg / **Verdict (avg POE+scrape) + one-sentence meaning per topic** (per Tom 2026-07-15: scrape column = keyword-tagged topic shares from the 312-review tab-6 CSV, 1-2★→neg n=162, 4-5★→pos n=118, 3★ excluded — approximate; verdict delta = mean of POE and scrape minus category; the POE Parent-ASIN column is deliberately omitted — it averages both child variants and tracks our ASIN within 1-2 pp; headline badges + yellow insight box are labeled "POE:" because they cite POE-only deltas), niche topic tables, Topic Impact on Star Rating, variant intel (children B0DJ3CHSWG/B0DJ3DLVVR), cross-check box vs tabs 5-6. **Static HTML, no JS** (uses `<details>` + `.voc-wrap` CSS). Source transcription: `Data/reviews/POE-review-insights-wasp-US-2026-07.md` (from 20 PNG screenshots in the same folder). **History 2026-07-15:** an "Alexa for Shopping says" column (per-topic CONFIRMS/DIVERGES badges) was added then removed the same day on Tom's request — restorable via scratchpad `build_poe_alexa.py`; Alexa data stays as a future separate tab. Panel is fully regenerable: scripts replace the HTML between `<!-- ═══ TAB TP (POE) ═══ -->` and `</div><!-- END TAB TP -->`. |
+
+**VOC tabs (5-7) use the data-driven template** from `../tab_templates/tabs/reviews.html` — only the `VOC_DATA_V1/V2/V3` blocks are project-specific; the rendering engine is the template's, namespaced per tab (prefix `v1-`/`v2-`/`v3-` on all element IDs, `_v1`/`_v2`/`_v3` suffix on functions, class queries scoped to the panel, template CSS namespaced under `.voc-wrap`). Namespacing is REQUIRED because three engine instances share one page — plain template copies would collide on IDs and function names. Generator script (repeatable): scratchpad `build_voc_tabs.py` + `voc_stats.py` (keyword tagging). Charts in hidden panels rely on the existing `show()` force-resize.
 
 ## Key Data Dimensions
 
